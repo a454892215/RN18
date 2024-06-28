@@ -15,4 +15,12 @@ distributionUrl=https\://downloads.gradle.org/distributions/gradle-8.6-all.zip
  which node Mac 显示全局安装的node版本路径
  where node    Mac 显示所有安装的node版本路径
 
+ 配置webstorm-run按钮运行APP:
+   1. 新建一个run-android.sh的脚本文件里面写入react-native run-android
+   2. 配置run 按钮。使用shell脚本模版，指向新建的run-android.sh
+
+ 配置webstorm 代码提示：
+ 安装react-native对应的提示库版本  npm install --save-dev @types/react-native@0.70.0
+
+
 
