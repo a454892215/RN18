@@ -1,0 +1,18 @@
+yarn install
+
+nvm install 14.17.1  安装指定的node版本
+nvm current  查看当前使用版本
+node -v 查看当前系统使用的node版本
+nvm use v18.20.3 切换当前使用版本
+ls ~/.nvm/versions/node/ 简洁列出nvm所有安装的node版本
+nvm alias default v16.20.2 设置默认版本
+nvm alias default v18.20.3  设置默认版本
+
+react-native init MyReactNativeApp  使用低版本node.js创建RN项目，最好指定RN版本号，即使如此也有很多兼容问题
+
+distributionUrl=https\://downloads.gradle.org/distributions/gradle-8.6-all.zip
+
+ which node Mac 显示全局安装的node版本路径
+ where node    Mac 显示所有安装的node版本路径
+
+
