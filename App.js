@@ -28,6 +28,10 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import HelloWorldScreen from './app/com/rn18/HomePage';
+
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
 const Section = ({children, title}): Node => {
@@ -57,7 +61,24 @@ const Section = ({children, title}): Node => {
   );
 };
 
-const App: () => Node = () => {
+// 创建一个堆栈导航器
+const Stack = createStackNavigator();
+
+// 主应用组件
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="HelloWorld" component={HelloWorldScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export default App;
+
+const HomeScreen = ({navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -74,11 +95,18 @@ const App: () => Node = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+
+        <Button
+          title="跳到API示例页面1"
+          color="#ff0000"
+          onPress={() => navigation.navigate('HelloWorld')}
+        />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Button
+            color="#cccccc"
             title="Press me"
             onPress={() => Alert.alert('Simple Button pressed')}
           />
@@ -122,4 +150,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+let style2 = StyleSheet.create({
+  btn: {color: 'red'},
+});
