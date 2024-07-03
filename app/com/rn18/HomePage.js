@@ -1,5 +1,11 @@
 // Hello World screen component
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  TouchableHighlight,
+} from 'react-native';
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 
@@ -21,9 +27,8 @@ const HelloWorldScreen = () => {
       }}>
       <View
         style={{
-          height: 100,
-          width: 100,
-          flex: 1,
+          padding: 10,
+          flex: 0,
           /* justifyContent: 'center',*/
           /*alignItems: 'center',*/
           backgroundColor: '#ff0000',
@@ -35,6 +40,13 @@ const HelloWorldScreen = () => {
           onPress={() => navigation.navigate('ViewSamplePage')}>
           <Text>View 使用示例</Text>
         </TouchableOpacity>
+        <TouchableHighlight
+          activeOpacity={0.6}
+          underlayColor="#DDDDDD"
+          style={styles.button}
+          onPress={() => navigation.navigate('TextSamplePage')}>
+          <Text>Text 使用示例</Text>
+        </TouchableHighlight>
       </View>
     </View>
   );

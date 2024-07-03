@@ -32,6 +32,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HelloWorldScreen from './app/com/rn18/HomePage';
 import ViewSamplePage from './app/com/rn18/ViewSamplePage';
+import TextSamplePage from './app/com/rn18/TextSamplePage';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -73,6 +74,7 @@ const App = () => {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="HelloWorldPage" component={HelloWorldScreen} />
         <Stack.Screen name="ViewSamplePage" component={ViewSamplePage} />
+        <Stack.Screen name="TextSamplePage" component={TextSamplePage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
