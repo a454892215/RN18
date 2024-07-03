@@ -70,6 +70,37 @@ const ViewSamplePage = () => {
         }}>
         {getViewArr()}
       </View>
+
+      {/*按比例分配父窗体空间*/}
+      <View
+        style={{
+          /*不设置宽高 则自动包裹内容*/
+          backgroundColor: '#40a14a',
+          padding: 10,
+          flex: 0,
+          marginBottom: 3,
+          flexDirection: 'row',
+          justifyContent: 'center', // 垂直居中
+          alignItems: 'center', // 水平居中
+        }}>
+        <View
+          style={{
+            height: 30,
+            width: 30,
+            backgroundColor: '#ff0000',
+            flex: 3,
+          }}
+        />
+
+        <View
+          style={{
+            height: 30,
+            width: 30,
+            backgroundColor: '#2256a5',
+            flex: 4,
+          }}
+        />
+      </View>
     </View>
   );
 };
