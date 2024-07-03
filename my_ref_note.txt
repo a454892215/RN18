@@ -23,4 +23,8 @@ distributionUrl=https\://downloads.gradle.org/distributions/gradle-8.6-all.zip
  安装react-native对应的提示库版本  npm install --save-dev @types/react-native@0.70.0
 
 
+代码拷贝下来，如果 npx react-native start 不能运行，请先npm install
+
+
+
 
