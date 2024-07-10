@@ -9,6 +9,18 @@ import {
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 
+function getPageJumpButton(navigation, name, routerName) {
+  return (
+    <TouchableHighlight
+      activeOpacity={0.6}
+      underlayColor="#DDDDDD"
+      style={styles.button}
+      onPress={() => navigation.navigate(routerName)}>
+      <Text>{name}</Text>
+    </TouchableHighlight>
+  );
+}
+
 const HelloWorldScreen = () => {
   const navigation = useNavigation();
   //  const [count, setCount] = useState(0);
@@ -22,7 +34,7 @@ const HelloWorldScreen = () => {
         /*flex: 1, 注释后 设置高度才生效*/
         backgroundColor: '#ffFF00',
         alignItems: 'center',
-        width: 200,
+        width: '100%',
         height: 200,
       }}>
       <View
@@ -38,15 +50,14 @@ const HelloWorldScreen = () => {
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate('ViewSamplePage')}>
-          <Text>View 使用示例</Text>
+          <Text>View使用示例</Text>
         </TouchableOpacity>
-        <TouchableHighlight
-          activeOpacity={0.6}
-          underlayColor="#DDDDDD"
-          style={styles.button}
-          onPress={() => navigation.navigate('TextSamplePage')}>
-          <Text>Text 使用示例</Text>
-        </TouchableHighlight>
+        {getPageJumpButton(navigation, 'Text使用示例', 'TextSamplePage')}
+        {getPageJumpButton(
+          navigation,
+          'FlatListSamplePage使用示例',
+          'FlatListSamplePage',
+        )}
       </View>
     </View>
   );

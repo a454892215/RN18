@@ -24,6 +24,7 @@ distributionUrl=https\://downloads.gradle.org/distributions/gradle-8.6-all.zip
 
 
 代码拷贝下来，如果 npx react-native start 不能运行，请先npm install
+https://github.com/jhen0409/react-native-debugger/
 
 
 
