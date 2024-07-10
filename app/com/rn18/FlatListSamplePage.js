@@ -18,11 +18,13 @@ const DATA = [
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
     title: 'Second Item',
   },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-  },
 ];
+for (let i = 1; i <= 20; i++) {
+  DATA.push({
+    id: i + '',
+    title: `Item ${i}`,
+  });
+}
 
 const ItemView = ({title}) => (
   <View style={styles.item}>
@@ -37,7 +39,10 @@ const FlatListSamplePage = () => {
       <FlatList
         data={DATA}
         renderItem={({item}) => <ItemView title={item.title} />}
-        keyExtractor={item => item.id}
+        keyExtractor={(item, index) => {
+          console.debug('keyExtractor:' + index);
+          return index + '';
+        }}
       />
     </SafeAreaView>
   );
@@ -50,12 +55,12 @@ const styles = StyleSheet.create({
   },
   item: {
     backgroundColor: '#f9c2ff',
-    padding: 20,
+    padding: 12,
     marginVertical: 8,
     marginHorizontal: 16,
   },
   title: {
-    fontSize: 32,
+    fontSize: 22,
   },
 });
 
