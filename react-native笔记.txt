@@ -1,0 +1,30 @@
+https://todoit.tech/ui-tips.html#adjustsfontsizetofit:
+记住，除非你的文本在盒子里垂直居中，否则一定要设置 lineHeight 样式属性。
+fontWeight 属性可以设置粗体。但是设置为数值时，只对 iOS 生效。
+吞字现象:
+当你发现，设置了 fontWeight: 'bold'，但在部分 Android 手机上，却看不到粗体的效果，那么很有可能发生了吞字现象。
+但是只要 style 设置了 fontFamily，就不会有显示不全的问题
+
+PixelRatio 工具类有个 roundToNearestPixel 方法，可以将数值转换为最接近的整数像素。
+如果你发现两个 View 之间有间隙，总是合不拢，那么可以尝试使用这个方法
+
+在 iOS，可以通过 shadowColor、shadowOffset、shadowOpacity、shadowRadius 这几个样式属性来设置阴影。但除了 shadowColor，其余几个属性在 Android 上都没有效果
+
+Button 具有平台独特样式，仅支持有限的配置，通常不会使用这个组件。
+Touchable 系列组件， 譬如 TouchableWithoutFeedback、TouchableOpacity 等，也可以用来做按钮。
+不过官方推荐使用 Pressable
+
+hitSlop有时，按钮太小，不好触摸，那么可以使用 hitSlop 来增加可点击范围。
+
+在 iOS 平台，Image 是支持阴影的。但在 Android 平台，它不支持阴影。如果要设置圆角阴影，需要将 Image 嵌套在 View 里面，并且都要设置 borderRadius。
+
+FastImage
+在 Android 平台，Image 底层是由 Fresco 实现的。它有两个不足之处：
+加载网络图片时，没有缓存控制，相反，在 iOS 平台上，它会自动缓存图片。
+它做了过度优化，当承载页面的 Fragment 将要隐藏时，在执行转场动画的过程中，图片会马上消失，这给人的感觉非常不好。
+官方推荐使用社区提供的 FastImage 组件，它提供了一个更好的控制缓存的能力，图片也不会在转场过程中消失。
+不过 FastImage 使用时需要指定宽高，即使是通过 require 引入的图片，也需要指定宽高。此外，tintColor 是另外的属性，而不是在 style 里。
+FastImage 是可以有子节点的
+
+ScrollView 是比较常用的可滚动视图。它有众多只适用于 iOS 的属性。
+
