@@ -30,6 +30,7 @@ react-native 启动和加载两处白屏的style解决方案，
     <style name="AppTheme" parent="Theme.ReactNative.AppCompat.Light.NoActionBar.FullScreen">
         <!--设置透明背景-->
         <item name="android:windowIsTranslucent">true</item>
+          <!--底部导航栏是否顶出布局-->
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:windowFullscreen">false</item>
         <item name="android:windowTranslucentStatus">true</item>
