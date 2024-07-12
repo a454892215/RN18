@@ -26,6 +26,13 @@ distributionUrl=https\://downloads.gradle.org/distributions/gradle-8.6-all.zip
 代码拷贝下来，如果 npx react-native start 不能运行，请先npm install
 https://github.com/jhen0409/react-native-debugger/
 
-
-
+react-native 启动和加载两处白屏的style解决方案，
+    <style name="AppTheme" parent="Theme.ReactNative.AppCompat.Light.NoActionBar.FullScreen">
+        <!--设置透明背景-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
+    </style>
 

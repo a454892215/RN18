@@ -6,6 +6,7 @@ import {
   FlatList,
   StatusBar,
   SafeAreaView,
+  ActivityIndicator,
 } from 'react-native';
 import React from 'react';
 
@@ -32,6 +33,31 @@ const ItemView = ({title}) => (
   </View>
 );
 
+const wait = ms => {
+  return new Promise(resolve => setTimeout(resolve, ms));
+};
+
+const fetchData = async () => {
+  console.log('加载更多 size：' + DATA.length);
+  await wait(200);
+  for (let i = 1; i <= 10; i++) {
+    DATA.push({
+      id: DATA.length + i + '',
+      title: `Item ${DATA.length + i}`,
+    });
+  }
+};
+
+const renderFooter = () => {
+  // if (!loading) return null;
+
+  return (
+    <View style={{padding: 10}}>
+      <ActivityIndicator size="large" />
+    </View>
+  );
+};
+
 const FlatListSamplePage = () => {
   return (
     /*   根节点的view高度自动填充满剩余空间*/
@@ -39,8 +65,10 @@ const FlatListSamplePage = () => {
       <FlatList
         data={DATA}
         renderItem={({item}) => <ItemView title={item.title} />}
+        onEndReached={fetchData}
+        ListFooterComponent={renderFooter}
         keyExtractor={(item, index) => {
-          console.debug('keyExtractor:' + index);
+          // console.debug('keyExtractor:' + index);
           return index + '';
         }}
       />
