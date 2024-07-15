@@ -7,6 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import {TabView, SceneMap} from 'react-native-tab-view';
+import PagerView from 'react-native-pager-view';
 
 const FirstRoute = () => <View style={{flex: 1, backgroundColor: '#ff4081'}} />;
 
@@ -40,7 +41,8 @@ export default function TabViewExample() {
         return (
           <TouchableOpacity
             key={index}
-            onPress={() => props.jumpTo(route.key)}
+            // onPress={() => props.jumpTo(route.key)}
+            onPress={() => setIndex(index)}
             style={[styles.tabItem, isFocused ? styles.activeTab : null]}>
             <Text style={isFocused ? styles.activeTabText : styles.tabText}>
               {route.title}
@@ -87,6 +89,8 @@ export default function TabViewExample() {
       onIndexChange={setIndex}
       renderTabBar={props => <CustomTabBar {...props} />}
       initialLayout={{width: layout.width}}
+      swipeEnabled={false} // 禁止手势滑动页面
+      animationEnabled={false} // 禁止页面翻页效果
       tabBarPosition="bottom"
     />
   );
