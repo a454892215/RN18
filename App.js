@@ -34,6 +34,7 @@ import HelloWorldScreen from './app/com/rn18/HomePage';
 import ViewSamplePage from './app/com/rn18/ViewSamplePage';
 import TextSamplePage from './app/com/rn18/TextSamplePage';
 import FlatListSamplePage from './app/com/rn18/FlatListSamplePage';
+import TabViewExample from './app/com/rn18/TabViewSample';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -76,6 +77,7 @@ const App = () => {
         <Stack.Screen name="HelloWorldPage" component={HelloWorldScreen} />
         <Stack.Screen name="ViewSamplePage" component={ViewSamplePage} />
         <Stack.Screen name="TextSamplePage" component={TextSamplePage} />
+        <Stack.Screen name="TabViewExample" component={TabViewExample} />
         {/* eslint-disable-next-line no-undef */}
         <Stack.Screen
           name="FlatListSamplePage"

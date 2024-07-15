@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   TouchableHighlight,
 } from 'react-native';
+// eslint-disable-next-line no-unused-vars
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 
@@ -58,6 +59,7 @@ const HelloWorldScreen = () => {
           'FlatListSamplePage使用示例',
           'FlatListSamplePage',
         )}
+        {getPageJumpButton(navigation, 'TabView-使用示例', 'TabViewExample')}
       </View>
     </View>
   );
