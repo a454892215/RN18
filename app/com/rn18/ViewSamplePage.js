@@ -146,7 +146,18 @@ const ViewSamplePage = () => {
           justifyContent: 'center', // 垂直居中
           alignItems: 'center', // 水平居中
         }}>
-        {getViewArr()}
+        {
+          /**
+           alignSelf 是用于控制单个项目在交叉轴（与主轴垂直的轴）上的对齐方式的样式属性。它通常用于覆盖父容器的 alignItems 属性，对某个特定项目进行单独的对齐设置。
+           alignSelf 可以应用于任何支持样式的 React Native 组件，例如 View 或 Text。它接受以下几个可能的值：
+           auto: 默认值，表示继承父容器的 alignItems 属性。
+           flex-start: 将项目对齐到交叉轴的起始边缘。
+           flex-end: 将项目对齐到交叉轴的结束边缘。
+           center: 将项目在交叉轴上居中对齐。
+           stretch: 如果项目未设置尺寸，则在交叉轴上拉伸以填充容器。
+           */
+          getViewArr()
+        }
       </View>
 
       {getSampleView2()}
