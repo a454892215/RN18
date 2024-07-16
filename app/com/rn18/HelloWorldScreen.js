@@ -32,12 +32,24 @@ const HelloWorldScreen = () => {
     /*   根节点的view高度自动填充满剩余空间*/
     <View
       style={{
-        /*flex: 1, 注释后 设置高度才生效*/
         backgroundColor: '#ffFF00',
         alignItems: 'center',
         width: '100%',
-        height: 200,
       }}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <Text>Home Screen</Text>
+        <TouchableOpacity
+          style={{marginTop: 20, padding: 10, backgroundColor: 'lightblue'}}
+          onPress={() => navigation.openDrawer()}>
+          <Text>Open Left Menu</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{marginTop: 20, padding: 10, backgroundColor: 'lightgreen'}}
+          onPress={() => navigation.openDrawer('right')}>
+          <Text>Open Right Menu</Text>
+        </TouchableOpacity>
+      </View>
+
       <View
         style={{
           padding: 10,
