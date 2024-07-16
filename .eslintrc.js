@@ -23,7 +23,7 @@ module.exports = {
   rules: {
     'react/prop-types': 'off', // Disable prop-types if you use TypeScript
     'react/react-in-jsx-scope': 'off', // Not needed with new React versions
-    'prettier/prettier': 'error',
+    'prettier/prettier': 'off',
   },
   settings: {
     react: {

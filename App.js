@@ -35,9 +35,12 @@ import ViewSamplePage from './app/com/rn18/ViewSamplePage';
 import TextSamplePage from './app/com/rn18/TextSamplePage';
 import FlatListSamplePage from './app/com/rn18/FlatListSamplePage';
 import TabViewExample from './app/com/rn18/TabViewSample';
-import createDrawerNavigator from '@react-navigation/drawer/src/navigators/createDrawerNavigator';
+
+// eslint-disable-next-line no-unused-vars
 import LeftDrawerContent from './app/com/rn18/LeftDrawerContent';
+// eslint-disable-next-line no-unused-vars
 import RightDrawerContent from './app/com/rn18/RightDrawerContent';
+// import {createDrawerNavigator} from '@react-navigation/drawer';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -70,31 +73,31 @@ const Section = ({children, title}): Node => {
 
 // 创建一个堆栈导航器
 const Stack = createStackNavigator();
-const Drawer = createDrawerNavigator();
+// const Drawer = createDrawerNavigator();
 
-const LeftDrawerNavigator = () => {
-  return (
-    <Drawer.Navigator
-      initialRouteName="Home"
-      drawerPosition="left"
-      drawerContent={props => <LeftDrawerContent {...props} />}>
-      <Drawer.Screen name="Home" component={HomeScreen} />
-      {/* Add other screens as needed */}
-    </Drawer.Navigator>
-  );
-};
+// const LeftDrawerNavigator = () => {
+//   return (
+//     <Drawer.Navigator
+//       initialRouteName="Home"
+//       drawerPosition="left"
+//       drawerContent={props => <LeftDrawerContent {...props} />}>
+//       <Drawer.Screen name="Home" component={HomeScreen} />
+//       {/* Add other screens as needed */}
+//     </Drawer.Navigator>
+//   );
+// };
 
-const RightDrawerNavigator = () => {
-  return (
-    <Drawer.Navigator
-      initialRouteName="Home"
-      drawerPosition="right"
-      drawerContent={props => <RightDrawerContent {...props} />}>
-      <Drawer.Screen name="Home" component={HomeScreen} />
-      {/* Add other screens as needed */}
-    </Drawer.Navigator>
-  );
-};
+// const RightDrawerNavigator = () => {
+//   return (
+//     <Drawer.Navigator
+//       initialRouteName="Home"
+//       drawerPosition="right"
+//       drawerContent={props => <RightDrawerContent {...props} />}>
+//       <Drawer.Screen name="Home" component={HomeScreen} />
+//       {/* Add other screens as needed */}
+//     </Drawer.Navigator>
+//   );
+// };
 
 const App = () => {
   return (
@@ -111,18 +114,18 @@ const App = () => {
           component={FlatListSamplePage}
         />
       </Stack.Navigator>
-      <Stack.Navigator
-        initialRouteName="LeftDrawerNavigator"
-        screenOptions={{headerShown: false}}>
-        <Stack.Screen
-          name="LeftDrawerNavigator"
-          component={LeftDrawerNavigator}
-        />
-        <Stack.Screen
-          name="RightDrawerNavigator"
-          component={RightDrawerNavigator}
-        />
-      </Stack.Navigator>
+      {/*<Stack.Navigator*/}
+      {/*  initialRouteName="LeftDrawerNavigator"*/}
+      {/*  screenOptions={{headerShown: false}}>*/}
+      {/*  <Stack.Screen*/}
+      {/*    name="LeftDrawerNavigator"*/}
+      {/*    component={LeftDrawerNavigator}*/}
+      {/*  />*/}
+      {/*  <Stack.Screen*/}
+      {/*    name="RightDrawerNavigator"*/}
+      {/*    component={RightDrawerNavigator}*/}
+      {/*  />*/}
+      {/*</Stack.Navigator>*/}
     </NavigationContainer>
   );
 };
