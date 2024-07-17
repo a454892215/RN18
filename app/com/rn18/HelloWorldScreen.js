@@ -72,6 +72,7 @@ const HelloWorldScreen = () => {
           'FlatListSamplePage',
         )}
         {getPageJumpButton(navigation, 'TabView-使用示例', 'TabViewExample')}
+        {getPageJumpButton(navigation, '侧滑弹窗效果', 'SlideInModal')}
       </View>
     </View>
   );

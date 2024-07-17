@@ -489,10 +489,12 @@
 				DEVELOPMENT_TEAM = GZAXG966T6;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = rn18/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = r18;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -515,10 +517,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GZAXG966T6;
 				INFOPLIST_FILE = rn18/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = r18;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

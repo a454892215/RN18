@@ -1,7 +1,7 @@
 # yarn install
 # yarn start -- --reset-cache
-watchman watch-del '/Users/hr007/Documents/henry-projects/RN18'
-watchman watch-project '/Users/hr007/Documents/henry-projects/RN18'
+watchman watch-del '../RN18'
+watchman watch-project '../RN18'
 yarn install
 yarn start -- --reset-cache
 
