@@ -1,4 +1,4 @@
-// Hello World screen component
+import React, {useState} from 'react';
 import {
   Text,
   View,
@@ -8,69 +8,61 @@ import {
   SafeAreaView,
   ActivityIndicator,
 } from 'react-native';
-import React from 'react';
-
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
-  },
-];
-for (let i = 1; i <= 20; i++) {
-  DATA.push({
-    id: i + '',
-    title: `Item ${i}`,
-  });
-}
-
-const ItemView = ({title}) => (
-  <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
-  </View>
-);
-
-const wait = ms => {
-  return new Promise(resolve => setTimeout(resolve, ms));
-};
-
-const fetchData = async () => {
-  console.log('加载更多 size：' + DATA.length);
-  await wait(200);
-  for (let i = 1; i <= 10; i++) {
-    DATA.push({
-      id: DATA.length + i + '',
-      title: `Item ${DATA.length + i}`,
-    });
-  }
-};
-
-const renderFooter = () => {
-  // if (!loading) return null;
-
-  return (
-    <View style={{padding: 10}}>
-      <ActivityIndicator size="large" />
-    </View>
-  );
-};
 
 const FlatListSamplePage = () => {
+  const [data, setData] = useState([]);
+
+  // 初始化数据， 传递的函数在组件首次渲染时候被调用
+  useState(() => {
+    const initialData = [];
+    for (let i = 1; i <= 20; i++) {
+      initialData.push({
+        id: i.toString(),
+        title: `Item ${i}`,
+      });
+    }
+    setData(initialData);
+  });
+
+  // 模拟异步获取更多数据
+  const fetchData = async () => {
+    await wait(200); // 模拟异步加载延迟
+    const newData = [];
+    for (let i = data.length + 1; i <= data.length + 10; i++) {
+      newData.push({
+        id: i.toString(),
+        title: `Item ${i}`,
+      });
+    }
+    setData([...data, ...newData]); // 使用函数式更新状态
+  };
+
+  const wait = ms => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  };
+
+  const ItemView = ({title}) => (
+    <View style={styles.item}>
+      <Text style={styles.title}>{title}</Text>
+    </View>
+  );
+
+  const renderFooter = () => {
+    return (
+      <View style={{padding: 10}}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  };
+
   return (
-    /*   根节点的view高度自动填充满剩余空间*/
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={DATA}
+        data={data}
         renderItem={({item}) => <ItemView title={item.title} />}
         onEndReached={fetchData}
         ListFooterComponent={renderFooter}
-        keyExtractor={(item, index) => {
-          // console.debug('keyExtractor:' + index);
-          return index + '';
-        }}
+        keyExtractor={(item, index) => index.toString()}
       />
     </SafeAreaView>
   );
