@@ -41,6 +41,7 @@ import LeftDrawerContent from './app/com/rn18/LeftDrawerContent';
 // eslint-disable-next-line no-unused-vars
 import RightDrawerContent from './app/com/rn18/RightDrawerContent';
 import SlideInModal from './app/com/rn18/SlideInModal';
+import ExpandableViewSample from './app/com/rn18/ViewHeightAnimation';
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
@@ -110,6 +111,10 @@ const App = () => {
         <Stack.Screen name="TextSamplePage" component={TextSamplePage} />
         <Stack.Screen name="TabViewExample" component={TabViewExample} />
         <Stack.Screen name="SlideInModal" component={SlideInModal} />
+        <Stack.Screen
+          name="ExpandableViewSample"
+          component={ExpandableViewSample}
+        />
         {/* eslint-disable-next-line no-undef */}
         <Stack.Screen
           name="FlatListSamplePage"

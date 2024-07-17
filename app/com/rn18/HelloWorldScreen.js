@@ -56,7 +56,7 @@ const HelloWorldScreen = () => {
           flex: 0,
           /* justifyContent: 'center',*/
           /*alignItems: 'center',*/
-          backgroundColor: '#ff0000',
+          backgroundColor: '#467b32',
           flexDirection: 'column',
         }}>
         {/* eslint-disable-next-line react/jsx-no-undef */}
@@ -73,6 +73,11 @@ const HelloWorldScreen = () => {
         )}
         {getPageJumpButton(navigation, 'TabView-使用示例', 'TabViewExample')}
         {getPageJumpButton(navigation, '侧滑弹窗效果', 'SlideInModal')}
+        {getPageJumpButton(
+          navigation,
+          'View高度动画效果',
+          'ExpandableViewSample',
+        )}
       </View>
     </View>
   );
