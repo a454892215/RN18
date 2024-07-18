@@ -8,7 +8,7 @@ const ChildComponent = () => {
 
   return (
     <View>
-      <Text>useContext-useState{count}</Text>
+      <Text>createContext-useContext-useState:{count}</Text>
     </View>
   );
 };
