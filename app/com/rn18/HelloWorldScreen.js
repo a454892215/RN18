@@ -81,6 +81,7 @@ const HelloWorldScreen = () => {
           'UI更新方式3：useContext',
           'UIUpdate3Context',
         )}
+        {getPageJumpButton(navigation, 'StickyHeader', 'StickyHeader')}
       </View>
     </View>
   );
