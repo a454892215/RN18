@@ -82,6 +82,7 @@ const HelloWorldScreen = () => {
           'UIUpdate3Context',
         )}
         {getPageJumpButton(navigation, 'StickyHeader', 'StickyHeader')}
+        {getPageJumpButton(navigation, 'MyTabView', 'MyTabView')}
       </View>
     </View>
   );
