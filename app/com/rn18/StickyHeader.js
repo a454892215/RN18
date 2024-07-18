@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, SectionList, StyleSheet, SafeAreaView} from 'react-native';
 
 const StickyHeader = () => {
-  const sections = [
+  const dataList = [
     {
       title: 'Section 1',
       data: [
@@ -53,7 +53,7 @@ const StickyHeader = () => {
   return (
     <SafeAreaView style={styles.container}>
       <SectionList
-        sections={sections}
+        sections={dataList}
         keyExtractor={(item, index) => item + index}
         renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
         renderSectionHeader={({section: {title}}) => (
@@ -73,8 +73,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   header: {
-    backgroundColor: '#f7f7f7',
-    padding: 10,
+    backgroundColor: '#437429',
+    padding: 20,
   },
   headerText: {
     fontSize: 18,

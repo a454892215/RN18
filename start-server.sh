@@ -3,7 +3,7 @@
 watchman watch-del '../RN18'
 watchman watch-project '../RN18'
 yarn install
-yarn start -- --reset-cache
+yarn start -- --reset-cache --port=8082
 
-# npx react-native start -- --reset-cache
+# npx react-native start -- --reset-cache --port=8082
 

@@ -1,3 +1,4 @@
 https://github.com/Genymobile/scrcpy/blob/master/doc/macos.md  android设备投屏
 https://www.snipaste.com/download.html  截屏取色工具
 https://github.com/skylot/jadx  apk反编译工具
+ios-deploy 类似adb 可以查看链接的手机 并且把ipa文件安装到手机
