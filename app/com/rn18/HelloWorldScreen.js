@@ -33,26 +33,14 @@ const HelloWorldScreen = () => {
     <View
       style={{
         backgroundColor: '#ffFF00',
+        flexDirection: 'column',
         alignItems: 'center',
+        flex: 0,
         width: '100%',
       }}>
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>Home Screen</Text>
-        <TouchableOpacity
-          style={{marginTop: 20, padding: 10, backgroundColor: 'lightblue'}}
-          onPress={() => navigation.openDrawer()}>
-          <Text>Open Left Menu</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{marginTop: 20, padding: 10, backgroundColor: 'lightgreen'}}
-          onPress={() => navigation.openDrawer('right')}>
-          <Text>Open Right Menu</Text>
-        </TouchableOpacity>
-      </View>
-
       <View
         style={{
-          padding: 10,
+          padding: 8,
           flex: 0,
           /* justifyContent: 'center',*/
           /*alignItems: 'center',*/
@@ -80,17 +68,17 @@ const HelloWorldScreen = () => {
         )}
         {getPageJumpButton(
           navigation,
-          'UpUpdate更新方式1：UseState',
+          'UI更新方式1：UseState',
           'UpUpdate1UseState',
         )}
         {getPageJumpButton(
           navigation,
-          'UpUpdate更新方式2：UseState-Props',
+          'UI更新方式2：UseState-Props',
           'UIUpdate2Props',
         )}
         {getPageJumpButton(
           navigation,
-          'UpUpdate更新方式2：useContext',
+          'UI更新方式3：useContext',
           'UIUpdate3Context',
         )}
       </View>
