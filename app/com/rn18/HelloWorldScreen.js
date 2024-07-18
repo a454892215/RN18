@@ -78,6 +78,21 @@ const HelloWorldScreen = () => {
           'View高度动画效果',
           'ExpandableViewSample',
         )}
+        {getPageJumpButton(
+          navigation,
+          'UpUpdate更新方式1：UseState',
+          'UpUpdate1UseState',
+        )}
+        {getPageJumpButton(
+          navigation,
+          'UpUpdate更新方式2：UseState-Props',
+          'UIUpdate2Props',
+        )}
+        {getPageJumpButton(
+          navigation,
+          'UpUpdate更新方式2：useContext',
+          'UIUpdate3Context',
+        )}
       </View>
     </View>
   );

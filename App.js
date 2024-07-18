@@ -42,6 +42,9 @@ import LeftDrawerContent from './app/com/rn18/LeftDrawerContent';
 import RightDrawerContent from './app/com/rn18/RightDrawerContent';
 import SlideInModal from './app/com/rn18/SlideInModal';
 import ExpandableViewSample from './app/com/rn18/ViewHeightAnimation';
+import UpUpdate1UseState from './app/com/rn18/UIUpdate1UseState';
+import UIUpdate2Props from './app/com/rn18/UIUpdate2Props';
+import UIUpdate3Context from './app/com/rn18/UIUpdate3Context';
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
@@ -111,6 +114,9 @@ const App = () => {
         <Stack.Screen name="TextSamplePage" component={TextSamplePage} />
         <Stack.Screen name="TabViewExample" component={TabViewExample} />
         <Stack.Screen name="SlideInModal" component={SlideInModal} />
+        <Stack.Screen name="UpUpdate1UseState" component={UpUpdate1UseState} />
+        <Stack.Screen name="UIUpdate2Props" component={UIUpdate2Props} />
+        <Stack.Screen name="UIUpdate3Context" component={UIUpdate3Context} />
         <Stack.Screen
           name="ExpandableViewSample"
           component={ExpandableViewSample}
