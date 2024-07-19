@@ -1,10 +1,11 @@
 import React from 'react';
 import {View, Text, SectionList, StyleSheet, SafeAreaView} from 'react-native';
-
+// StickyHeader 效果，隐藏第一个头部可以变成吸顶效果
 const StickyHeader = () => {
   const dataList = [
     {
-      title: 'Section 1',
+      id: -1,
+      title: 'Section 2',
       data: [
         'Item 1',
         'Item 2',
@@ -13,9 +14,6 @@ const StickyHeader = () => {
         'Item 5',
         'Item 6',
         'Item 7',
-        'Item 8',
-        'Item 9',
-        'Item 10',
       ],
     },
     {
@@ -56,11 +54,13 @@ const StickyHeader = () => {
         sections={dataList}
         keyExtractor={(item, index) => item + index}
         renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
-        renderSectionHeader={({section: {title}}) => (
-          <View style={styles.header}>
-            <Text style={styles.headerText}>{title}</Text>
-          </View>
-        )}
+        renderSectionHeader={({section}) =>
+          section.id && section.id === -1 ? null : (
+            <View style={[styles.header]}>
+              <Text style={[styles.headerText]}>{section.title}</Text>
+            </View>
+          )
+        }
         stickySectionHeadersEnabled={true}
       />
     </SafeAreaView>
@@ -72,9 +72,19 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 20,
   },
+  firstHeader: {
+    flex: 0,
+    height: 0,
+    backgroundColor: '#d5b84e',
+  },
   header: {
     backgroundColor: '#437429',
     padding: 20,
+  },
+  firstHeaderText: {
+    fontSize: 0,
+    height: 0,
+    opacity: 0,
   },
   headerText: {
     fontSize: 18,
