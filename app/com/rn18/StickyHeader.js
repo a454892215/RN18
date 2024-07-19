@@ -6,15 +6,7 @@ const StickyHeader = () => {
     {
       id: -1,
       title: 'Section 2',
-      data: [
-        'Item 1',
-        'Item 2',
-        'Item 3',
-        'Item 4',
-        'Item 5',
-        'Item 6',
-        'Item 7',
-      ],
+      data: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
     },
     {
       title: 'Section 2',
@@ -46,8 +38,27 @@ const StickyHeader = () => {
         'Item 30',
       ],
     },
+    {
+      title: 'Section 4',
+      data: [
+        'Item 212',
+        'Item 221',
+        'Item 231',
+        'Item 241',
+        'Item 251',
+        'Item 261',
+        'Item 271',
+        'Item 281',
+        'Item 291',
+        'Item 301',
+      ],
+    },
   ];
 
+  /**
+   * React Native 的 SectionList 中没有 renderSectionHeader 的部分索引
+   *
+   * **/
   return (
     <SafeAreaView style={styles.container}>
       <SectionList
