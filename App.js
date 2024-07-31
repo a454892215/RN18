@@ -37,9 +37,7 @@ import FlatListSamplePage from './app/com/rn18/FlatListSamplePage';
 import TabViewExample from './app/com/rn18/TabViewSample';
 
 // eslint-disable-next-line no-unused-vars
-import LeftDrawerContent from './app/com/rn18/LeftDrawerContent';
 // eslint-disable-next-line no-unused-vars
-import RightDrawerContent from './app/com/rn18/RightDrawerContent';
 import SlideInModal from './app/com/rn18/SlideInModal';
 import ExpandableViewSample from './app/com/rn18/ViewHeightAnimation';
 import UpUpdate1UseState from './app/com/rn18/UIUpdate1UseState';
@@ -48,6 +46,7 @@ import UIUpdate3Context from './app/com/rn18/UIUpdate3Context';
 import StickyHeader from './app/com/rn18/StickyHeader';
 import MyTabView from './app/com/rn18/CollapsibleHeaderwithTabView';
 import VerticalPagerViewS from './app/com/rn18/VerticalPagerViewSamplePage';
+import HorizontalPagerViewS from './app/com/rn18/HorizontalPagerViewSamplePage';
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
@@ -122,6 +121,10 @@ const App = () => {
         <Stack.Screen name="UIUpdate3Context" component={UIUpdate3Context} />
         <Stack.Screen name="StickyHeader" component={StickyHeader} />
         <Stack.Screen name="MyTabView" component={MyTabView} />
+        <Stack.Screen
+          name="HorizontalPagerViewS"
+          component={HorizontalPagerViewS}
+        />
         <Stack.Screen
           name="VerticalPagerViewS"
           component={VerticalPagerViewS}
