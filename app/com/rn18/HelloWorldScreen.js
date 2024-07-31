@@ -83,6 +83,11 @@ const HelloWorldScreen = () => {
         )}
         {getPageJumpButton(navigation, 'StickyHeader', 'StickyHeader')}
         {getPageJumpButton(navigation, 'MyTabView', 'MyTabView')}
+        {getPageJumpButton(
+          navigation,
+          'VerticalPagerViewS',
+          'VerticalPagerViewS',
+        )}
       </View>
     </View>
   );

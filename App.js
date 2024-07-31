@@ -47,6 +47,7 @@ import UIUpdate2Props from './app/com/rn18/UIUpdate2Props';
 import UIUpdate3Context from './app/com/rn18/UIUpdate3Context';
 import StickyHeader from './app/com/rn18/StickyHeader';
 import MyTabView from './app/com/rn18/CollapsibleHeaderwithTabView';
+import VerticalPagerViewS from './app/com/rn18/VerticalPagerViewSamplePage';
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
@@ -121,6 +122,10 @@ const App = () => {
         <Stack.Screen name="UIUpdate3Context" component={UIUpdate3Context} />
         <Stack.Screen name="StickyHeader" component={StickyHeader} />
         <Stack.Screen name="MyTabView" component={MyTabView} />
+        <Stack.Screen
+          name="VerticalPagerViewS"
+          component={VerticalPagerViewS}
+        />
         <Stack.Screen
           name="ExpandableViewSample"
           component={ExpandableViewSample}
