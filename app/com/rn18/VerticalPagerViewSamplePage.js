@@ -18,15 +18,15 @@ const VerticalPagerViewS = () => {
       ref={pagerViewRef}
       style={styles.pagerView}
       orientation="vertical">
-      <View key="1" style={styles.page}>
+      <View key="1" style={[styles.page, {backgroundColor: '#23367f'}]}>
         <Text style={styles.text}>第一页</Text>
         <Button title="Go to Page 2" onPress={() => goToPage(1)} />
       </View>
-      <View key="2" style={styles.page}>
+      <View key="2" style={[styles.page, {backgroundColor: '#ffff00'}]}>
         <Text style={styles.text}>第二页</Text>
         <Button title="Go to Page 1" onPress={() => goToPage(0)} />
       </View>
-      <View key="3" style={styles.page}>
+      <View key="3" style={[styles.page, {backgroundColor: '#50a54d'}]}>
         <Text style={styles.text}>第三页</Text>
       </View>
     </PagerView>
