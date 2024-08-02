@@ -93,7 +93,7 @@ const HelloWorldScreen = () => {
           'VerticalPagerViewS',
           'VerticalPagerViewS',
         )}
-        {getPageJumpButton(navigation, 'MyTabComponent', 'MyTabComponent')}
+        {getPageJumpButton(navigation, '自定义MyTabComponent', 'MyTabComponent')}
       </View>
     </View>
   );

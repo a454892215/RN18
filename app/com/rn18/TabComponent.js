@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {
   View,
   Text,
@@ -7,19 +7,44 @@ import {
   FlatList,
   Dimensions,
   StyleSheet,
+  ScrollView,
 } from 'react-native';
 
 const {width} = Dimensions.get('window');
-
-const tabs = ['Tab1', 'Tab2', 'Tab3', 'Tab4'];
+const tabItemWidth = 80;
+const tabs = [
+  'Tab1',
+  'Tab2',
+  'Tab3',
+  'Tab4',
+  'Tab5',
+  'Tab6',
+  'Tab7',
+  'Tab8',
+  'Tab9',
+  'TabA',
+];
 
 const MyTabComponent = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
   const flatListRef = useRef(null);
 
+  useEffect(() => {
+    const id = scrollX.addListener(({value}) => {
+      console.log('scrollX：' + value);
+    });
+    return () => {
+      scrollX.removeListener(id);
+    };
+  }, [scrollX]);
+
   // eslint-disable-next-line no-unused-vars
   const renderItem = ({item, index}) => (
-    <View style={styles.tabContent}>
+    <View
+      style={[
+        styles.tabContent,
+        {backgroundColor: index % 2 === 0 ? '#ffcccc' : '#3e67ad'},
+      ]}>
       <Text>{item}</Text>
     </View>
   );
@@ -27,31 +52,42 @@ const MyTabComponent = () => {
   return (
     <View style={styles.container}>
       <View style={styles.tabContainer}>
-        {tabs.map((tab, index) => (
-          <TouchableOpacity
-            key={index}
-            style={styles.tab}
-            onPress={() => {
-              flatListRef.current.scrollToIndex({index, animated: true});
-            }}>
-            <Text style={styles.tabText}>{tab}</Text>
-          </TouchableOpacity>
-        ))}
-        <Animated.View
-          style={[
-            styles.indicator,
-            {
-              transform: [
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <View style={{flexDirection: 'column'}}>
+            <View style={{flexDirection: 'row'}}>
+              {tabs.map((tab, index) => (
+                <TouchableOpacity
+                  key={index}
+                  style={styles.tab}
+                  onPress={() => {
+                    flatListRef.current.scrollToIndex({index, animated: true});
+                  }}>
+                  <Text style={styles.tabText}>{tab}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+            <Animated.View
+              style={[
+                styles.indicator,
                 {
-                  translateX: scrollX.interpolate({
-                    inputRange: [0, width],
-                    outputRange: [0, width / tabs.length],
-                  }),
+                  transform: [
+                    {
+                      translateX: scrollX.interpolate({
+                        /**
+                         * inputRange: 输入范围
+                         * outputRange：输出范围
+                         * 会根据输入范围自动映射输出范围
+                         */
+                        inputRange: [0, width * (tabs.length - 1)],
+                        outputRange: [0, tabItemWidth * (tabs.length - 1)],
+                      }),
+                    },
+                  ],
                 },
-              ],
-            },
-          ]}
-        />
+              ]}
+            />
+          </View>
+        </ScrollView>
       </View>
       <FlatList
         ref={flatListRef}
@@ -79,7 +115,8 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   tab: {
-    flex: 1,
+    flex: 0,
+    width: tabItemWidth,
     alignItems: 'center',
     paddingVertical: 15,
   },
@@ -91,7 +128,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     height: 3,
-    width: width / tabs.length,
+    width: tabItemWidth,
     backgroundColor: 'blue',
   },
   tabContent: {
