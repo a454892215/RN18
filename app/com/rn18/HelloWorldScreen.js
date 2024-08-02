@@ -82,7 +82,6 @@ const HelloWorldScreen = () => {
           'UIUpdate3Context',
         )}
         {getPageJumpButton(navigation, 'StickyHeader', 'StickyHeader')}
-        {getPageJumpButton(navigation, 'MyTabView', 'MyTabView')}
         {getPageJumpButton(
           navigation,
           'HorizontalPagerViewS',
@@ -93,7 +92,11 @@ const HelloWorldScreen = () => {
           'VerticalPagerViewS',
           'VerticalPagerViewS',
         )}
-        {getPageJumpButton(navigation, '自定义MyTabComponent', 'MyTabComponent')}
+        {getPageJumpButton(
+          navigation,
+          '自定义MyTabComponent',
+          'MyTabComponent',
+        )}
       </View>
     </View>
   );

@@ -25,7 +25,7 @@ const tabs = [
   'TabA',
 ];
 
-const MyTabComponent = () => {
+const MyTabView = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
   const flatListRef = useRef(null);
 
@@ -138,4 +138,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MyTabComponent;
+export default MyTabView;
