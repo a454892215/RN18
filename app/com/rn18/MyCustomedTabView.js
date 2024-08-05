@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   View,
   Text,
@@ -28,10 +28,13 @@ const tabs = [
 const MyTabView = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
   const flatListRef = useRef(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
     const id = scrollX.addListener(({value}) => {
-      console.log('scrollX：' + value);
+      // console.log('scrollX：' + value);
+      const index = Math.floor(value / width);
+      setSelectedIndex(index);
     });
     return () => {
       scrollX.removeListener(id);
@@ -71,7 +74,16 @@ const MyTabView = () => {
                         animated: true,
                       });
                     }}>
-                    <Text style={styles.tabText}>{tab}</Text>
+                    <Text
+                      style={[
+                        styles.tabText,
+                        {
+                          color:
+                            selectedIndex === index ? '#3e67ad' : '#656565',
+                        },
+                      ]}>
+                      {tab}
+                    </Text>
                   </TouchableOpacity>
                 );
               })}
