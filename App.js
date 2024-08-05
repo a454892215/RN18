@@ -47,7 +47,8 @@ import StickyHeader from './app/com/rn18/StickyHeader';
 
 import VerticalPagerViewS from './app/com/rn18/VerticalPagerViewSamplePage';
 import HorizontalPagerViewS from './app/com/rn18/HorizontalPagerViewSamplePage';
-import MyTabComponent from './app/com/rn18/TabComponent';
+import MyTabView from './app/com/rn18/MyCustomedTabView';
+
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
@@ -121,7 +122,7 @@ const App = () => {
         <Stack.Screen name="UIUpdate2Props" component={UIUpdate2Props} />
         <Stack.Screen name="UIUpdate3Context" component={UIUpdate3Context} />
         <Stack.Screen name="StickyHeader" component={StickyHeader} />
-        <Stack.Screen name="MyTabComponent" component={MyTabComponent} />
+        <Stack.Screen name="MyTabComponent" component={MyTabView} />
         <Stack.Screen
           name="HorizontalPagerViewS"
           component={HorizontalPagerViewS}

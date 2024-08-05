@@ -54,17 +54,27 @@ const MyTabView = () => {
       <View style={styles.tabContainer}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <View style={{flexDirection: 'column'}}>
-            <View style={{flexDirection: 'row'}}>
-              {tabs.map((tab, index) => (
-                <TouchableOpacity
-                  key={index}
-                  style={styles.tab}
-                  onPress={() => {
-                    flatListRef.current.scrollToIndex({index, animated: true});
-                  }}>
-                  <Text style={styles.tabText}>{tab}</Text>
-                </TouchableOpacity>
-              ))}
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'center',
+                height: 40,
+              }}>
+              {tabs.map((tab, index) => {
+                return (
+                  <TouchableOpacity
+                    key={index}
+                    style={styles.tab}
+                    onPress={() => {
+                      flatListRef.current.scrollToIndex({
+                        index,
+                        animated: true,
+                      });
+                    }}>
+                    <Text style={styles.tabText}>{tab}</Text>
+                  </TouchableOpacity>
+                );
+              })}
             </View>
             <Animated.View
               style={[
@@ -118,7 +128,9 @@ const styles = StyleSheet.create({
     flex: 0,
     width: tabItemWidth,
     alignItems: 'center',
-    paddingVertical: 15,
+    backgroundColor: '#7fa087',
+    justifyContent: 'center',
+    paddingVertical: 0,
   },
   tabText: {
     fontSize: 16,
