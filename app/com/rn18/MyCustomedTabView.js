@@ -1,4 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react';
+// eslint-disable-next-line no-unused-vars
+import React, {useRef, useState} from 'react';
 import {
   View,
   Text,
@@ -28,18 +29,19 @@ const tabs = [
 const MyTabView = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
   const flatListRef = useRef(null);
+  const scrollViewRef = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  useEffect(() => {
-    const id = scrollX.addListener(({value}) => {
-      // console.log('scrollX：' + value);
-      const index = Math.floor(value / width);
-      setSelectedIndex(index);
-    });
-    return () => {
-      scrollX.removeListener(id);
-    };
-  }, [scrollX]);
+  // useEffect(() => {
+  //   const id = scrollX.addListener(({value}) => {
+  //     console.log('scrollX：' + value);
+  //     //const index = Math.floor(value / width);
+  //     // setSelectedIndex(index);
+  //   });
+  //   return () => {
+  //     scrollX.removeListener(id);
+  //   };
+  // }, [scrollX]);
 
   // eslint-disable-next-line no-unused-vars
   const renderItem = ({item, index}) => (
@@ -52,10 +54,28 @@ const MyTabView = () => {
     </View>
   );
 
+  const handleTabPress = index => {
+    flatListRef.current.scrollToIndex({index, animated: true});
+  };
+
+  const onMomentumScrollEnd = event => {
+    const offset = event.nativeEvent.contentOffset.x;
+    const index = Math.floor(offset / width);
+    setSelectedIndex(index);
+    const scrollOffset = Math.max(
+      0,
+      index * tabItemWidth - (width / 2 - tabItemWidth / 2),
+    );
+    scrollViewRef.current.scrollTo({x: scrollOffset, animated: true});
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.tabContainer}>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        <ScrollView
+          ref={scrollViewRef}
+          horizontal
+          showsHorizontalScrollIndicator={false}>
           <View style={{flexDirection: 'column'}}>
             <View
               style={{
@@ -68,12 +88,7 @@ const MyTabView = () => {
                   <TouchableOpacity
                     key={index}
                     style={styles.tab}
-                    onPress={() => {
-                      flatListRef.current.scrollToIndex({
-                        index,
-                        animated: true,
-                      });
-                    }}>
+                    onPress={() => handleTabPress(index)}>
                     <Text
                       style={[
                         styles.tabText,
@@ -122,6 +137,7 @@ const MyTabView = () => {
           {useNativeDriver: false},
         )}
         renderItem={renderItem}
+        onMomentumScrollEnd={onMomentumScrollEnd}
         showsHorizontalScrollIndicator={false}
       />
     </View>
