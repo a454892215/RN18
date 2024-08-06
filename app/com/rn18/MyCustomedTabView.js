@@ -54,19 +54,26 @@ const MyTabView = () => {
     </View>
   );
 
-  const handleTabPress = index => {
-    flatListRef.current.scrollToIndex({index, animated: true});
-  };
-
-  const onMomentumScrollEnd = event => {
-    const offset = event.nativeEvent.contentOffset.x;
-    const index = Math.floor(offset / width);
+  function onSelectedTabChanged(index) {
     setSelectedIndex(index);
     const scrollOffset = Math.max(
       0,
       index * tabItemWidth - (width / 2 - tabItemWidth / 2),
     );
     scrollViewRef.current.scrollTo({x: scrollOffset, animated: true});
+  }
+
+  const handleTabPress = index => {
+    flatListRef.current.scrollToIndex({index, animated: true});
+    onSelectedTabChanged(index);
+  };
+
+  const onMomentumScrollEnd = event => {
+    // tab点击触发的滚动没有调用
+    console.debug('onMomentumScrollEnd');
+    const offset = event.nativeEvent.contentOffset.x;
+    const index = Math.floor(offset / width);
+    onSelectedTabChanged(index);
   };
 
   return (
