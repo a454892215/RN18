@@ -26,6 +26,13 @@ distributionUrl=https\://downloads.gradle.org/distributions/gradle-8.6-all.zip
 代码拷贝下来，如果 npx react-native start 不能运行，请先npm install
 https://github.com/jhen0409/react-native-debugger/
 
+watchman watch-del ../Rn-newModel
+watchman watch-project ../Rn-newModel
+
+在 package-lock.json 中将 registry.nlark.com 替换为 registry.npmmirror.com
+
+安卓模拟器打开RN调试菜单 adb shell input keyevent 82
+
 react-native 启动和加载两处白屏的style解决方案，
     <style name="AppTheme" parent="Theme.ReactNative.AppCompat.Light.NoActionBar.FullScreen">
         <!--设置透明背景-->
