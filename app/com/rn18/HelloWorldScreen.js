@@ -97,6 +97,13 @@ const HelloWorldScreen = () => {
           '自定义MyTabComponent',
           'MyTabComponent',
         )}
+        {getPageJumpButton(
+          navigation,
+          'RnInvokeAndroid示例1',
+          'RnInvokeAndroid1',
+        )}
+
+
       </View>
     </View>
   );

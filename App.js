@@ -48,6 +48,7 @@ import StickyHeader from './app/com/rn18/StickyHeader';
 import VerticalPagerViewS from './app/com/rn18/VerticalPagerViewSamplePage';
 import HorizontalPagerViewS from './app/com/rn18/HorizontalPagerViewSamplePage';
 import MyTabView from './app/com/rn18/MyCustomedTabView';
+import RnInvokeAndroid1 from "./app/com/rn18/RnInvokeAndroid1";
 
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
@@ -139,6 +140,11 @@ const App = () => {
         <Stack.Screen
           name="FlatListSamplePage"
           component={FlatListSamplePage}
+        />
+
+        <Stack.Screen
+          name="RnInvokeAndroid1"
+          component={RnInvokeAndroid1}
         />
       </Stack.Navigator>
       {/*<Stack.Navigator*/}
