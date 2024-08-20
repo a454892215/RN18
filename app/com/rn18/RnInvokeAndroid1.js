@@ -5,17 +5,31 @@ import {NativeModules} from 'react-native';
 
 const {MyNativeModule2} = NativeModules;
 
-// import Toast from 'react-native-toast-message';
+import Toast from 'react-native-toast-message';
 
 const RnInvokeAndroid1 = () => {
   function invokeAndroid() {
     MyNativeModule2.showToast('Hello from React Native!');
   }
 
+  async function invokeAndroid2() {
+    try {
+      const deviceName = await MyNativeModule2.getDeviceName();
+      console.log('Device Name:', deviceName);
+      Toast.show({type: 'success', text1: '操作成功', text2: deviceName});
+    } catch (error) {
+      console.error('Failed to get device name:', error);
+    }
+  }
+
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={invokeAndroid}>
         <Text>Rn调用Android示例1</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={invokeAndroid2}>
+        <Text>Rn调用Android示例2</Text>
       </TouchableOpacity>
     </View>
   );

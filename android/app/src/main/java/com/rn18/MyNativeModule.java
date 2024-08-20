@@ -28,6 +28,7 @@ public class MyNativeModule extends ReactContextBaseJavaModule {
     public void getDeviceName(Promise promise) {
         try {
             String deviceName = android.os.Build.MODEL;
+            // 异步返回
             promise.resolve(deviceName+":666");
         } catch (Exception e) {
             promise.reject("Error", e);

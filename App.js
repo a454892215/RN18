@@ -8,6 +8,7 @@
 
 import React from 'react';
 import type {Node} from 'react';
+import Toast from 'react-native-toast-message';
 import {
   Alert,
   Button,
@@ -48,7 +49,7 @@ import StickyHeader from './app/com/rn18/StickyHeader';
 import VerticalPagerViewS from './app/com/rn18/VerticalPagerViewSamplePage';
 import HorizontalPagerViewS from './app/com/rn18/HorizontalPagerViewSamplePage';
 import MyTabView from './app/com/rn18/MyCustomedTabView';
-import RnInvokeAndroid1 from "./app/com/rn18/RnInvokeAndroid1";
+import RnInvokeAndroid1 from './app/com/rn18/RnInvokeAndroid1';
 
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
@@ -111,55 +112,58 @@ const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="HelloWorldPage" component={HelloWorldScreen} />
-        <Stack.Screen name="ViewSamplePage" component={ViewSamplePage} />
-        <Stack.Screen name="TextSamplePage" component={TextSamplePage} />
-        <Stack.Screen name="TabViewExample" component={TabViewExample} />
-        <Stack.Screen name="SlideInModal" component={SlideInModal} />
-        <Stack.Screen name="UpUpdate1UseState" component={UpUpdate1UseState} />
-        <Stack.Screen name="UIUpdate2Props" component={UIUpdate2Props} />
-        <Stack.Screen name="UIUpdate3Context" component={UIUpdate3Context} />
-        <Stack.Screen name="StickyHeader" component={StickyHeader} />
-        <Stack.Screen name="MyTabComponent" component={MyTabView} />
-        <Stack.Screen
-          name="HorizontalPagerViewS"
-          component={HorizontalPagerViewS}
-        />
-        <Stack.Screen
-          name="VerticalPagerViewS"
-          component={VerticalPagerViewS}
-        />
-        <Stack.Screen
-          name="ExpandableViewSample"
-          component={ExpandableViewSample}
-        />
-        {/* eslint-disable-next-line no-undef */}
-        <Stack.Screen
-          name="FlatListSamplePage"
-          component={FlatListSamplePage}
-        />
+    <>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="HelloWorldPage" component={HelloWorldScreen} />
+          <Stack.Screen name="ViewSamplePage" component={ViewSamplePage} />
+          <Stack.Screen name="TextSamplePage" component={TextSamplePage} />
+          <Stack.Screen name="TabViewExample" component={TabViewExample} />
+          <Stack.Screen name="SlideInModal" component={SlideInModal} />
+          <Stack.Screen
+            name="UpUpdate1UseState"
+            component={UpUpdate1UseState}
+          />
+          <Stack.Screen name="UIUpdate2Props" component={UIUpdate2Props} />
+          <Stack.Screen name="UIUpdate3Context" component={UIUpdate3Context} />
+          <Stack.Screen name="StickyHeader" component={StickyHeader} />
+          <Stack.Screen name="MyTabComponent" component={MyTabView} />
+          <Stack.Screen
+            name="HorizontalPagerViewS"
+            component={HorizontalPagerViewS}
+          />
+          <Stack.Screen
+            name="VerticalPagerViewS"
+            component={VerticalPagerViewS}
+          />
+          <Stack.Screen
+            name="ExpandableViewSample"
+            component={ExpandableViewSample}
+          />
+          {/* eslint-disable-next-line no-undef */}
+          <Stack.Screen
+            name="FlatListSamplePage"
+            component={FlatListSamplePage}
+          />
 
-        <Stack.Screen
-          name="RnInvokeAndroid1"
-          component={RnInvokeAndroid1}
-        />
-      </Stack.Navigator>
-      {/*<Stack.Navigator*/}
-      {/*  initialRouteName="LeftDrawerNavigator"*/}
-      {/*  screenOptions={{headerShown: false}}>*/}
-      {/*  <Stack.Screen*/}
-      {/*    name="LeftDrawerNavigator"*/}
-      {/*    component={LeftDrawerNavigator}*/}
-      {/*  />*/}
-      {/*  <Stack.Screen*/}
-      {/*    name="RightDrawerNavigator"*/}
-      {/*    component={RightDrawerNavigator}*/}
-      {/*  />*/}
-      {/*</Stack.Navigator>*/}
-    </NavigationContainer>
+          <Stack.Screen name="RnInvokeAndroid1" component={RnInvokeAndroid1} />
+        </Stack.Navigator>
+        {/*<Stack.Navigator*/}
+        {/*  initialRouteName="LeftDrawerNavigator"*/}
+        {/*  screenOptions={{headerShown: false}}>*/}
+        {/*  <Stack.Screen*/}
+        {/*    name="LeftDrawerNavigator"*/}
+        {/*    component={LeftDrawerNavigator}*/}
+        {/*  />*/}
+        {/*  <Stack.Screen*/}
+        {/*    name="RightDrawerNavigator"*/}
+        {/*    component={RightDrawerNavigator}*/}
+        {/*  />*/}
+        {/*</Stack.Navigator>*/}
+      </NavigationContainer>
+      <Toast ref={ref => Toast.setRef(ref)} />
+    </>
   );
 };
 
