@@ -3,17 +3,13 @@ import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
 import {NativeModules} from 'react-native';
 
-const {MyNativeModule} = NativeModules;
+const {MyNativeModule2} = NativeModules;
+
+// import Toast from 'react-native-toast-message';
 
 const RnInvokeAndroid1 = () => {
   function invokeAndroid() {
-    MyNativeModule.getDeviceName()
-      .then(deviceName => {
-        console.log(deviceName);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    MyNativeModule2.showToast('Hello from React Native!');
   }
 
   return (
