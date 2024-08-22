@@ -105,6 +105,7 @@ const HelloWorldScreen = () => {
             'RnInvokeAndroid1',
           )}
           {getPageJumpButton(navigation, '缩放动画示例', 'Anim1Scale')}
+          {getPageJumpButton(navigation, '平移动画示例', 'Anim2Translation')}
         </View>
       </View>
     </ScrollView>
