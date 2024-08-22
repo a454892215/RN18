@@ -50,6 +50,7 @@ import VerticalPagerViewS from './app/com/rn18/VerticalPagerViewSamplePage';
 import HorizontalPagerViewS from './app/com/rn18/HorizontalPagerViewSamplePage';
 import MyTabView from './app/com/rn18/MyCustomedTabView';
 import RnInvokeAndroid1 from './app/com/rn18/RnInvokeAndroid1';
+import Anim1Scale from './app/com/rn18/Anim1Scale';
 
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
@@ -148,6 +149,7 @@ const App = () => {
           />
 
           <Stack.Screen name="RnInvokeAndroid1" component={RnInvokeAndroid1} />
+          <Stack.Screen name="Anim1Scale" component={Anim1Scale} />
         </Stack.Navigator>
         {/*<Stack.Navigator*/}
         {/*  initialRouteName="LeftDrawerNavigator"*/}
