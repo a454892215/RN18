@@ -104,11 +104,13 @@ const HelloWorldScreen = () => {
             'RnInvokeAndroid示例1',
             'RnInvokeAndroid1',
           )}
-          {getPageJumpButton(navigation, '缩放动画示例', 'Anim1Scale')}
-          {getPageJumpButton(navigation, '平移动画示例', 'Anim2Translation')}
-          {getPageJumpButton(navigation, '旋转动画示例', 'Anim3Rotate')}
-          {getPageJumpButton(navigation, '颜色动画示例', 'Anim4Color')}
-          {getPageJumpButton(navigation, 'Spring动画示例', 'Anim5Spring')}
+          {getPageJumpButton(navigation, '动画示例1：缩放', 'Anim1Scale')}
+          {getPageJumpButton(navigation, '动画示例2：平移', 'Anim2Translation')}
+          {getPageJumpButton(navigation, '动画示例3：旋转', 'Anim3Rotate')}
+          {getPageJumpButton(navigation, '动画示例4：颜色', 'Anim4Color')}
+          {getPageJumpButton(navigation, '动画示例5：Spring', 'Anim5Spring')}
+          {getPageJumpButton(navigation, '动画示例6：组合', 'Anim5Spring')}
+          {getPageJumpButton(navigation, '动画示例6：组合', 'Anim6Composite')}
         </View>
       </View>
     </ScrollView>

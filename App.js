@@ -55,6 +55,7 @@ import Anim2Translation from './app/com/rn18/Anim2Translation';
 import Anim3Rotate from './app/com/rn18/Anim3Rotate';
 import Anim4Color from './app/com/rn18/Anim4Color';
 import Anim5Spring from './app/com/rn18/Anim5Spring';
+import Anim6Composite from './app/com/rn18/Anim6Compose';
 
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
@@ -157,8 +158,8 @@ const App = () => {
           <Stack.Screen name="Anim2Translation" component={Anim2Translation} />
           <Stack.Screen name="Anim3Rotate" component={Anim3Rotate} />
           <Stack.Screen name="Anim4Color" component={Anim4Color} />
-          {/* eslint-disable-next-line no-undef */}
           <Stack.Screen name="Anim5Spring" component={Anim5Spring} />
+          <Stack.Screen name="Anim6Composite" component={Anim6Composite} />
         </Stack.Navigator>
         {/*<Stack.Navigator*/}
         {/*  initialRouteName="LeftDrawerNavigator"*/}
