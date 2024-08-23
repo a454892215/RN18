@@ -53,6 +53,7 @@ import RnInvokeAndroid1 from './app/com/rn18/RnInvokeAndroid1';
 import Anim1Scale from './app/com/rn18/Anim1Scale';
 import Anim2Translation from './app/com/rn18/Anim2Translation';
 import Anim3Rotate from './app/com/rn18/Anim3Rotate';
+import Anim3Color from './app/com/rn18/Anim4Color';
 
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
@@ -154,6 +155,7 @@ const App = () => {
           <Stack.Screen name="Anim1Scale" component={Anim1Scale} />
           <Stack.Screen name="Anim2Translation" component={Anim2Translation} />
           <Stack.Screen name="Anim3Rotate" component={Anim3Rotate} />
+          <Stack.Screen name="Anim3Color" component={Anim3Color} />
         </Stack.Navigator>
         {/*<Stack.Navigator*/}
         {/*  initialRouteName="LeftDrawerNavigator"*/}
