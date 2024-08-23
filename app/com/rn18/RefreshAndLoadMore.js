@@ -65,16 +65,24 @@ const RefreshAndLoadMore = () => {
     setLoadingMore(false);
   }, [loadingMore, page]);
 
+  const getItemLayout = useCallback(
+    (data, index) => ({
+      length: itemHeight, // 每个item的高度
+      offset: itemHeight * index,
+      index,
+    }),
+    [],
+  );
+
   // 渲染列表项
-  // eslint-disable-next-line no-unused-vars
-  const renderItem = ({item}) => {
+  const renderItem = useCallback(({item}) => {
     // console.log('renderItem:' + index);
     return (
       <View style={styles.item}>
         <Text>{item}</Text>
       </View>
     );
-  };
+  }, []);
 
   // 渲染加载更多的指示器
   const renderFooter = useCallback(() => {
@@ -104,11 +112,7 @@ const RefreshAndLoadMore = () => {
       refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }
-      getItemLayout={(data, index) => ({
-        length: itemHeight, // 每个item的高度
-        offset: itemHeight * index,
-        index,
-      })}
+      getItemLayout={getItemLayout}
       onEndReached={loadMoreData}
       // onEndReachedThreshold={0.5} // 设置触发加载更多的临界值
     />
