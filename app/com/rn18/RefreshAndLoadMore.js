@@ -106,7 +106,7 @@ const RefreshAndLoadMore = () => {
       // windowSize会影响 属性定义了在屏幕上可见区域外，还要预渲染和缓存多少项
       // windowSize={8} // 必须大🆚0
       //initialNumToRender={30}
-      maxToRenderPerBatch={50 * 3}
+      // maxToRenderPerBatch={50 * 3}
       keyExtractor={(item, index) => index.toString()}
       ListFooterComponent={renderFooter}
       refreshControl={

@@ -28,7 +28,7 @@ const FlatListSamplePage = () => {
   const fetchData = async () => {
     await wait(200); // 模拟异步加载延迟
     const newData = [];
-    for (let i = data.length + 1; i <= data.length + 10; i++) {
+    for (let i = data.length + 1; i <= data.length + 50; i++) {
       newData.push({
         id: i.toString(),
         title: `Item ${i}`,
