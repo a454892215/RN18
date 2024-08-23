@@ -106,7 +106,7 @@ const HelloWorldScreen = () => {
           )}
           {getPageJumpButton(navigation, '缩放动画示例', 'Anim1Scale')}
           {getPageJumpButton(navigation, '平移动画示例', 'Anim2Translation')}
-          {getPageJumpButton(navigation, '旋转动画示例', 'Anim4Rotate')}
+          {getPageJumpButton(navigation, '旋转动画示例', 'Anim3Rotate')}
           {getPageJumpButton(navigation, '颜色动画示例', 'Anim4Color')}
           {getPageJumpButton(navigation, 'Spring动画示例', 'Anim5Spring')}
         </View>
