@@ -110,6 +110,11 @@ const HelloWorldScreen = () => {
           {getPageJumpButton(navigation, '动画示例4：颜色', 'Anim4Color')}
           {getPageJumpButton(navigation, '动画示例5：弹性', 'Anim5Spring')}
           {getPageJumpButton(navigation, '动画示例6：组合', 'Anim6Composite')}
+          {getPageJumpButton(
+            navigation,
+            '下拉刷新和加载更多',
+            'RefreshAndLoadMore',
+          )}
         </View>
       </View>
     </ScrollView>
