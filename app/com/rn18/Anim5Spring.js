@@ -8,13 +8,13 @@ const Anim5Spring = () => {
     Animated.spring(position, {
       toValue: 100, // 目标位置
       friction: 5, // 摩擦力，影响回弹效果
-      tension: 180, // 拉力，影响弹簧的弹性
+      tension: 180, // 弹力，影响弹簧的弹性
       useNativeDriver: true, // 使用原生驱动
     }).start(() => {
       Animated.spring(position, {
         toValue: 0, // 目标位置
         friction: 5, // 摩擦力，影响回弹效果
-        tension: 180, // 拉力，影响弹簧的弹性
+        tension: 180, // 弹力，影响弹簧的弹性
         useNativeDriver: true, // 使用原生驱动
       }).start();
     });
