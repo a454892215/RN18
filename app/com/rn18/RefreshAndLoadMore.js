@@ -27,6 +27,7 @@ const generateData = async (page = initPageIndex) => {
 };
 
 const initPageIndex = 0;
+const itemHeight = 50;
 const RefreshAndLoadMore = () => {
   const [data, setData] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
@@ -66,8 +67,8 @@ const RefreshAndLoadMore = () => {
 
   // 渲染列表项
   // eslint-disable-next-line no-unused-vars
-  const renderItem = ({item, index}) => {
-    console.log('renderItem:' + index);
+  const renderItem = ({item}) => {
+    // console.log('renderItem:' + index);
     return (
       <View style={styles.item}>
         <Text>{item}</Text>
@@ -103,6 +104,11 @@ const RefreshAndLoadMore = () => {
       refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }
+      getItemLayout={(data, index) => ({
+        length: itemHeight, // 每个item的高度
+        offset: itemHeight * index,
+        index,
+      })}
       onEndReached={loadMoreData}
       // onEndReachedThreshold={0.5} // 设置触发加载更多的临界值
     />
@@ -111,9 +117,11 @@ const RefreshAndLoadMore = () => {
 
 const styles = StyleSheet.create({
   item: {
-    padding: 20,
+    height: itemHeight,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   footer: {
     padding: 20,
