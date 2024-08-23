@@ -53,6 +53,7 @@ const RefreshAndLoadMore = () => {
   // 加载更多
   const loadMoreData = useCallback(async () => {
     if (loadingMore) return;
+    console.log('==========loadMoreData============page:' + page);
     //  await simulateNetworkRequest();
     setLoadingMore(true);
     const nextPage = page + 1;
@@ -70,11 +71,18 @@ const RefreshAndLoadMore = () => {
   );
 
   // 渲染加载更多的指示器
-  const renderFooter = () => (
-    <View style={styles.footer}>
-      <ActivityIndicator size="large" />
-    </View>
-  );
+  const renderFooter = useCallback(() => {
+    /**
+     * 注意 因为复用机制，这里的page 在第一次执行后，就不会再变化了，即使此page更新了，这里也不会更新输出
+     * 除非useCallback不再复用，才会更新
+     */
+    console.log('==========renderFooter======page:' + page);
+    return (
+      <View style={styles.footer}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }, []);
 
   return (
     <FlatList
@@ -86,7 +94,7 @@ const RefreshAndLoadMore = () => {
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }
       onEndReached={loadMoreData}
-      onEndReachedThreshold={0.5} // 设置触发加载更多的临界值
+      // onEndReachedThreshold={0.5} // 设置触发加载更多的临界值
     />
   );
 };
