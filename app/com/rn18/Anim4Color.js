@@ -1,12 +1,15 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import {View, Text, TouchableOpacity, Animated, StyleSheet} from 'react-native';
 
 const Anim3Color = () => {
   // 使用 useRef 创建 Animated.Value
   const colorValue = useRef(new Animated.Value(0)).current;
-
+  const [isAnimating, setIsAnimating] = useState(false); // 动画状态
   // 定义颜色渐变动画函数
   const startColorAnimation = () => {
+    if (isAnimating) return; // 如果动画正在播放，则返回
+    setIsAnimating(true); // 设置动画状态为播放中
+
     Animated.timing(colorValue, {
       toValue: 1, // 动画结束值
       duration: 2000, // 动画持续时间为 2000 毫秒
@@ -17,7 +20,7 @@ const Anim3Color = () => {
         toValue: 0, // 反向动画
         duration: 2000,
         useNativeDriver: false,
-      }).start();
+      }).start(() => setIsAnimating(false));
     });
   };
 
