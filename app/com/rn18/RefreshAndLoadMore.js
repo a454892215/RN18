@@ -64,11 +64,14 @@ const RefreshAndLoadMore = () => {
   }, [loadingMore, page]);
 
   // 渲染列表项
-  const renderItem = ({item}) => (
-    <View style={styles.item}>
-      <Text>{item}</Text>
-    </View>
-  );
+  const renderItem = useCallback(({item, index}) => {
+    console.log('renderItem:' + index);
+    return (
+      <View style={styles.item}>
+        <Text>{item}</Text>
+      </View>
+    );
+  }, []);
 
   // 渲染加载更多的指示器
   const renderFooter = useCallback(() => {
@@ -76,7 +79,7 @@ const RefreshAndLoadMore = () => {
      * 注意 因为复用机制，这里的page 在第一次执行后，就不会再变化了，即使此page更新了，这里也不会更新输出
      * 除非useCallback不再复用，才会更新
      */
-    console.log('==========renderFooter======page:' + page);
+    // console.log('==========renderFooter======page:' + page);
     return (
       <View style={styles.footer}>
         <ActivityIndicator size="large" />
