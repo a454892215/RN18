@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {View, Text, TouchableOpacity, Animated, StyleSheet} from 'react-native';
 
-const Anim3Color = () => {
+const Anim4Color = () => {
   // 使用 useRef 创建 Animated.Value
   const colorValue = useRef(new Animated.Value(0)).current;
   const [isAnimating, setIsAnimating] = useState(false); // 动画状态
@@ -70,4 +70,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Anim3Color;
+export default Anim4Color;
