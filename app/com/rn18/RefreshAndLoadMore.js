@@ -19,8 +19,9 @@ const generateData = async (page = initPageIndex) => {
   await simulateNetworkRequest();
   const data = [];
   // 如果初始化数据不满一页 会自动触发加载更多
-  for (let i = 0; i < 8; i++) {
-    data.push(`Item ${page * 10 + i}`);
+  const perSize = 50;
+  for (let i = 0; i < perSize; i++) {
+    data.push(`Item ${page * perSize + i}`);
   }
   return data;
 };
@@ -53,25 +54,26 @@ const RefreshAndLoadMore = () => {
   // 加载更多
   const loadMoreData = useCallback(async () => {
     if (loadingMore) return;
-    console.log('==========loadMoreData============page:' + page);
     //  await simulateNetworkRequest();
     setLoadingMore(true);
     const nextPage = page + 1;
     setPage(nextPage);
+    console.log('==========loadMoreData============page:' + nextPage);
     const moreData = await generateData(nextPage);
     setData(prevData => [...prevData, ...moreData]);
     setLoadingMore(false);
   }, [loadingMore, page]);
 
   // 渲染列表项
-  const renderItem = useCallback(({item, index}) => {
-    console.log('renderItem:' + index);
+  // eslint-disable-next-line no-unused-vars
+  const renderItem = ({item}) => {
+    // console.log('renderItem:' + index);
     return (
       <View style={styles.item}>
         <Text>{item}</Text>
       </View>
     );
-  }, []);
+  };
 
   // 渲染加载更多的指示器
   const renderFooter = useCallback(() => {
