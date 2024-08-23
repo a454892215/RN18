@@ -66,8 +66,8 @@ const RefreshAndLoadMore = () => {
 
   // 渲染列表项
   // eslint-disable-next-line no-unused-vars
-  const renderItem = ({item}) => {
-    // console.log('renderItem:' + index);
+  const renderItem = ({item, index}) => {
+    console.log('renderItem:' + index);
     return (
       <View style={styles.item}>
         <Text>{item}</Text>
@@ -92,7 +92,12 @@ const RefreshAndLoadMore = () => {
   return (
     <FlatList
       data={data}
+      // 即使是原来屏幕的ItemView renderItem在每次更新的时候也会调用， 这一点和Android不一样
       renderItem={renderItem}
+      // windowSize会影响 属性定义了在屏幕上可见区域外，还要预渲染和缓存多少项
+      // windowSize={8} // 必须大🆚0
+      //initialNumToRender={30}
+      //maxToRenderPerBatch={50 * 3}
       keyExtractor={(item, index) => index.toString()}
       ListFooterComponent={renderFooter}
       refreshControl={
