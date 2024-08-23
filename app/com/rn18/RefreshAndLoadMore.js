@@ -98,6 +98,8 @@ const RefreshAndLoadMore = () => {
     );
   }, []);
 
+  const keyExtractor = useCallback((item, index) => index.toString(), []);
+
   return (
     <FlatList
       data={data}
@@ -107,7 +109,7 @@ const RefreshAndLoadMore = () => {
       // windowSize={8} // 必须大🆚0
       //initialNumToRender={30}
       // maxToRenderPerBatch={50 * 3}
-      keyExtractor={(item, index) => index.toString()}
+      keyExtractor={keyExtractor}
       ListFooterComponent={renderFooter}
       refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
