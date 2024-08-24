@@ -115,6 +115,7 @@ const HelloWorldScreen = () => {
             '下拉刷新和加载更多',
             'RefreshAndLoadMore',
           )}
+          {getPageJumpButton(navigation, 'ApiTestPage', 'ApiTestPage')}
         </View>
       </View>
     </ScrollView>

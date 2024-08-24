@@ -57,6 +57,7 @@ import Anim4Color from './app/com/rn18/Anim4Color';
 import Anim5Spring from './app/com/rn18/Anim5Spring';
 import Anim6Composite from './app/com/rn18/Anim6Compose';
 import RefreshAndLoadMore from './app/com/rn18/RefreshAndLoadMore';
+import ApiTestPage from './app/com/rn18/ApiTestPage';
 
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
@@ -161,6 +162,7 @@ const App = () => {
           <Stack.Screen name="Anim4Color" component={Anim4Color} />
           <Stack.Screen name="Anim5Spring" component={Anim5Spring} />
           <Stack.Screen name="Anim6Composite" component={Anim6Composite} />
+          <Stack.Screen name="ApiTestPage" component={ApiTestPage} />
           <Stack.Screen
             name="RefreshAndLoadMore"
             component={RefreshAndLoadMore}
