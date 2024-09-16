@@ -1,0 +1,10 @@
+{
+  "env": {
+    "production": {
+      "plugins": []
+    },
+    "development": {
+      "plugins": ["./custom-plugin-log.js"]
+    }
+  }
+}
