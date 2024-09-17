@@ -20,9 +20,8 @@ const ApiTestPage = () => {
           }}>
           <Text
             style={{fontSize: 12, fontWeight: '400', color: '#000000'}}
-            onPress={() => console.log('=========点按钮')}
             onLongPress={() => console.log('=========长按钮')}>
-            短/长按扭
+            长按扭
           </Text>
         </View>
       </Pressable>
