@@ -1,3 +1,5 @@
+import Log from './Log.js';
+
 const target = {
   message1: 'hello',
   message2: 'everyone',
@@ -15,6 +17,5 @@ const handler = {
 };
 
 const proxy = new Proxy(target, handler);
-
-console.log(proxy.message1); // 输出: "hello"
-console.log(proxy.message2); // 输出: "world"
+Log.d(proxy.message1); // 输出: "hello"
+Log.d(proxy.message2); // 输出: "world"
