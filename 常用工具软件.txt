@@ -2,3 +2,12 @@ https://github.com/Genymobile/scrcpy/blob/master/doc/macos.md  android设备投�
 https://www.snipaste.com/download.html  截屏取色工具
 https://github.com/skylot/jadx  apk反编译工具
 ios-deploy 类似adb 可以查看链接的手机 并且把ipa文件安装到手机
+
+配置WebStorm Run窗口启动服务：
+在菜单栏中选择Run -> Edit Configurations...。
+点击左上角的+号，选择npm。
+Name: start-server
+Command: run
+Scrips: start
+Arguments: --reset-cache --port=8082
+其他配置默认 即可
