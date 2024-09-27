@@ -1,5 +1,5 @@
 // Log.js
-export default class Log {
+class Log {
   static d(...args) {
     const error = new Error();
     const stack = error.stack?.split('\n')[2]; // 获取调用栈的第二行
@@ -20,3 +20,4 @@ export default class Log {
     }
   }
 }
+Log.d('======hello world=======');

@@ -17,7 +17,7 @@ module.exports = function ({types: t}) {
               t.memberExpression(t.identifier('console'), t.identifier('log')),
               [
                 t.stringLiteral(
-                  `at ========LLpp=============>: (${fileName}:${lineNumber})`,
+                  ` at ========LLpp=============>:at (${fileName}:${lineNumber})`,
                 ),
               ],
             ),
