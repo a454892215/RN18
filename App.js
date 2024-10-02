@@ -59,6 +59,7 @@ import Anim6Composite from './app/com/rn18/Anim6Compose';
 import RefreshAndLoadMore from './app/com/rn18/RefreshAndLoadMore';
 import ApiTestPage from './app/com/rn18/ApiTestPage';
 import ViewSample2 from './app/com/rn18/ViewSample2';
+import CustomButton from './app/com/rn18/custom/CustomButton';
 
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
@@ -164,6 +165,14 @@ const App = () => {
           <Stack.Screen name="Anim5Spring" component={Anim5Spring} />
           <Stack.Screen name="Anim6Composite" component={Anim6Composite} />
           <Stack.Screen name="ViewSample2" component={ViewSample2} />
+          <Stack.Screen
+            name="CustomButton"
+            component={CustomButton}
+            initialParams={{
+              title: '点击我aaa',
+              color: 'blue',
+            }}
+          />
           <Stack.Screen name="ApiTestPage" component={ApiTestPage} />
           <Stack.Screen
             name="RefreshAndLoadMore"

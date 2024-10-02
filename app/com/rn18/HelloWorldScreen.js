@@ -116,6 +116,7 @@ const HelloWorldScreen = () => {
             'RefreshAndLoadMore',
           )}
           {getPageJumpButton(navigation, 'ViewSample2', 'ViewSample2')}
+          {getPageJumpButton(navigation, 'CustomButton', 'CustomButton')}
           {getPageJumpButton(navigation, 'ApiTestPage', 'ApiTestPage')}
         </View>
       </View>
