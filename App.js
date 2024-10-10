@@ -60,6 +60,7 @@ import RefreshAndLoadMore from './app/com/rn18/RefreshAndLoadMore';
 import ApiTestPage from './app/com/rn18/ApiTestPage';
 import ViewSample2 from './app/com/rn18/ViewSample2';
 import CustomButton from './app/com/rn18/custom/CustomButton';
+import InputSample from './app/com/rn18/InputSample';
 
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
@@ -165,6 +166,7 @@ const App = () => {
           <Stack.Screen name="Anim5Spring" component={Anim5Spring} />
           <Stack.Screen name="Anim6Composite" component={Anim6Composite} />
           <Stack.Screen name="ViewSample2" component={ViewSample2} />
+          <Stack.Screen name="InputSample" component={InputSample} />
           <Stack.Screen
             name="CustomButton"
             component={CustomButton}
