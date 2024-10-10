@@ -3,6 +3,7 @@ import {View, StyleSheet, TextInput} from 'react-native';
 
 const InputSample = () => {
   const [password, setPassword] = useState('');
+  const [text2, setText2] = useState('');
 
   return (
     <View style={styles.container}>
@@ -24,6 +25,18 @@ const InputSample = () => {
         value={password}
         onChangeText={text => {
           setPassword(text);
+          console.debug('psd:' + text);
+        }}
+      />
+
+      <TextInput
+        style={styles.input}
+        placeholder="自动把输入转成小写示例"
+        secureTextEntry={false}
+        keyboardType="default"
+        value={text2}
+        onChangeText={text => {
+          setText2(text.toLowerCase());
           console.debug('psd:' + text);
         }}
       />
