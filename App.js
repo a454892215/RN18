@@ -222,13 +222,11 @@ const HomeScreen = ({navigation}) => {
 
         <MyButton
           text="跳到API示例页面1"
-          color="#ff0000"
           onPress={() => navigation.navigate('HelloWorldPage')}
         />
         <View style={{height: 5}} />
         <MyButton
-          color="#cccccc"
-          title="Press me"
+          text="Press me"
           onPress={() => Alert.alert('Simple Button pressed')}
         />
         <View

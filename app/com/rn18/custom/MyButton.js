@@ -7,6 +7,7 @@ class MyButton extends Component {
     text: '按钮',
     textColor: 'white',
     textSize: 13,
+    height: 40,
     backgroundColor: '#cccccc',
     onPress: () => {
       console.log('===ccc===');
@@ -17,15 +18,21 @@ class MyButton extends Component {
     text: PropTypes.string,
     textColor: PropTypes.string,
     textSize: PropTypes.number,
+    height: PropTypes.number,
     backgroundColor: PropTypes.string,
     onPress: PropTypes.func,
   };
 
   render() {
-    const {text, textColor, textSize, onPress, backgroundColor} = this.props;
+    const {text, textColor, textSize, height, onPress, backgroundColor} =
+      this.props;
     return (
       <TouchableOpacity
-        style={[styles.content, {backgroundColor: backgroundColor}]}
+        activeOpacity={0.8}
+        style={[
+          styles.content,
+          {backgroundColor: backgroundColor, height: height},
+        ]}
         onPress={onPress}>
         <Text style={[{color: textColor, fontSize: textSize}]}>{text}</Text>
       </TouchableOpacity>
@@ -35,12 +42,10 @@ class MyButton extends Component {
 
 const styles = StyleSheet.create({
   content: {
-    padding: 8,
-    borderRadius: 5,
+    borderRadius: 15,
     justifyContent: 'center', // 垂直居中
     alignItems: 'center', // 水平居中
   },
-  button: {},
 });
 
 export default MyButton;
