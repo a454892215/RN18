@@ -61,6 +61,7 @@ import ApiTestPage from './app/com/rn18/ApiTestPage';
 import ViewSample2 from './app/com/rn18/ViewSample2';
 import CustomButton from './app/com/rn18/custom/CustomButton';
 import InputSample from './app/com/rn18/InputSample';
+import MyButton from './app/com/rn18/custom/MyButton';
 
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
@@ -219,21 +220,21 @@ const HomeScreen = ({navigation}) => {
         style={backgroundStyle}>
         <Header />
 
-        <Button
-          title="跳到API示例页面1"
+        <MyButton
+          text="跳到API示例页面1"
           color="#ff0000"
           onPress={() => navigation.navigate('HelloWorldPage')}
+        />
+        <View style={{height: 5}} />
+        <MyButton
+          color="#cccccc"
+          title="Press me"
+          onPress={() => Alert.alert('Simple Button pressed')}
         />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Button
-            color="#cccccc"
-            title="Press me"
-            onPress={() => Alert.alert('Simple Button pressed')}
-          />
-
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.js</Text> to change this
             screen and then come back to see your edits.
