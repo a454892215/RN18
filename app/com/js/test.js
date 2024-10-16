@@ -1,3 +1,1 @@
-let isAdmin = true;
-let userRole = isAdmin || 'Guest'; // 返回: "Guest"
-console.log(userRole);
+console.log('|| 运算符:');
