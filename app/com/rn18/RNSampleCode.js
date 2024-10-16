@@ -14,7 +14,7 @@ const ViewSample2 = () => {
           flex: 0,
           marginBottom: 3,
           flexDirection: 'row',
-          justifyContent: 'center', // 垂直居中
+          justifyContent: 'space-between', // 垂直居中
           alignItems: 'center', // 水平居中
         }}>
         <Text style={{fontSize: 16, color: '#ff0000'}}>你好</Text>
@@ -30,7 +30,8 @@ const ViewSample2 = () => {
         }}
         onPress={() => {}}>
         <Image
-          style={{width: 28, height: 28}}
+          style={{width: 28}}
+          resizeMode="cover"
           source={require('../../static/img/home/aaa.png')}
         />
       </TouchableOpacity>
