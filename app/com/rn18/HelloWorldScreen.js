@@ -118,6 +118,11 @@ const HelloWorldScreen = () => {
           {getPageJumpButton(navigation, 'ViewSample2', 'ViewSample2')}
           {getPageJumpButton(navigation, 'InputSample', 'InputSample')}
           {getPageJumpButton(navigation, 'CustomButton', 'CustomButton')}
+          {getPageJumpButton(
+            navigation,
+            'CustomDrawerTest',
+            'CustomDrawerTest',
+          )}
           {getPageJumpButton(navigation, 'ApiTestPage', 'ApiTestPage')}
         </View>
       </View>

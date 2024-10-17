@@ -11,7 +11,6 @@ import type {Node} from 'react';
 import Toast from 'react-native-toast-message';
 import {
   Alert,
-  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -62,6 +61,7 @@ import ViewSample2 from './app/com/rn18/ViewSample2';
 import CustomButton from './app/com/rn18/custom/CustomButton';
 import InputSample from './app/com/rn18/InputSample';
 import MyButton from './app/com/rn18/custom/MyButton';
+import CustomDrawerTest from './app/com/rn18/CustomDrawerTest';
 
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
@@ -168,6 +168,7 @@ const App = () => {
           <Stack.Screen name="Anim6Composite" component={Anim6Composite} />
           <Stack.Screen name="ViewSample2" component={ViewSample2} />
           <Stack.Screen name="InputSample" component={InputSample} />
+          <Stack.Screen name="CustomDrawerTest" component={CustomDrawerTest} />
           <Stack.Screen
             name="CustomButton"
             component={CustomButton}
