@@ -16,7 +16,37 @@ const CustomDrawerTest = () => {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <CustomDrawer />
+      <CustomDrawer>
+        <View
+          style={{
+            position: 'absolute',
+            left: -40,
+            bottom: 0,
+            top: 70,
+            height: 40,
+            width: 40,
+            backgroundColor: '#12519c',
+            borderRadius: 6,
+            marginBottom: 3,
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <TouchableOpacity
+            style={{
+              borderRadius: 30,
+              backgroundColor: '#6200ee',
+              justifyContent: 'center',
+              alignItems: 'center',
+              elevation: 5,
+            }}
+            onPress={() => {
+              eventBus.emit(toggle2MenuEvent);
+            }}>
+            <Text style={{fontSize: 16, color: '#ffffff'}}>开关</Text>
+          </TouchableOpacity>
+        </View>
+      </CustomDrawer>
       {/*悬浮按钮*/}
       <TouchableOpacity
         style={{
@@ -41,7 +71,7 @@ const CustomDrawerTest = () => {
 };
 
 // eslint-disable-next-line no-unused-vars
-const CustomDrawer = () => {
+const CustomDrawer = myProps => {
   const [isOpen, setIsOpen] = useState(false);
   const animation = useRef(new Animated.Value(0)).current;
   const menuWidth = 120;
@@ -99,6 +129,8 @@ const CustomDrawer = () => {
       ]}>
       {/* 菜单内容 */}
       <Text>菜单内容</Text>
+      {/* 渲染子组件 */}
+      {myProps.children}
     </Animated.View>
   );
 };
