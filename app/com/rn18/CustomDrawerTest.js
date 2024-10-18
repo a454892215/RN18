@@ -7,6 +7,11 @@ const eventBus = new EventEmitter();
 const toggle2MenuEvent = 'openMenuEvent';
 
 const CustomDrawerTest = () => {
+  const [parentSize, setParentSize] = useState({width: 0, height: 0});
+  const onChildLayout = event => {
+    const {width, height} = event.nativeEvent.layout;
+    setParentSize({width, height});
+  };
   return (
     <View
       style={{
@@ -19,13 +24,13 @@ const CustomDrawerTest = () => {
       <CustomDrawer>
         <View
           style={{
+            width: parentSize.width,
+            height: parentSize.height,
             position: 'absolute',
-            left: -40,
+            left: -parentSize.width,
             bottom: 0,
             top: 70,
-            height: 40,
-            width: 40,
-            backgroundColor: '#12519c',
+            backgroundColor: '#ffc86c',
             borderRadius: 6,
             marginBottom: 3,
             flexDirection: 'row',
@@ -33,7 +38,10 @@ const CustomDrawerTest = () => {
             alignItems: 'center',
           }}>
           <TouchableOpacity
+            onLayout={onChildLayout}
             style={{
+              width: 40,
+              height: 40,
               borderRadius: 30,
               backgroundColor: '#6200ee',
               justifyContent: 'center',
@@ -96,7 +104,6 @@ const CustomDrawer = myProps => {
   useEffect(() => {
     // 监听事件
     const toggleMenuListener = () => {
-      console.debug('===received toggleMenuListener====isOpen：' + isOpen);
       toggleMenu();
     };
     eventBus.on(toggle2MenuEvent, toggleMenuListener);
