@@ -1,7 +1,8 @@
 // CustomDrawer.js
 
 import React, {useRef, useState} from 'react';
-import {Animated, View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
+import CustomRightDrawer from './custom/CustomRightDrawer';
 
 const CustomDrawerTest = () => {
   const [parentSize, setParentSize] = useState({width: 0, height: 0});
@@ -14,6 +15,7 @@ const CustomDrawerTest = () => {
   const drawerRef = useRef(); // 创建ref
   const menuWidth = 120;
   const menuHeight = 180;
+
   return (
     <View
       style={{
@@ -97,57 +99,5 @@ const CustomDrawerTest = () => {
     </View>
   );
 };
-
-const CustomRightDrawer = React.forwardRef(
-  ({children, menuWidth, menuHeight}, ref) => {
-    CustomRightDrawer.displayName = 'CustomRightDrawer';
-    const [isOpen, setIsOpen] = useState(false);
-    const animation = useRef(new Animated.Value(0)).current;
-
-    const toggleDrawer = () => {
-      if (isOpen) {
-        Animated.timing(animation, {
-          toValue: 0,
-          duration: 250,
-          useNativeDriver: true,
-        }).start(() => setIsOpen(false));
-      } else {
-        setIsOpen(true);
-        Animated.timing(animation, {
-          toValue: 1,
-          duration: 250,
-          useNativeDriver: true,
-        }).start();
-      }
-    };
-
-    // 将 toggleDrawer 暴露给父组件
-    React.useImperativeHandle(ref, () => ({toggleDrawer}));
-
-    const translateX = animation.interpolate({
-      inputRange: [0, 1],
-      outputRange: [menuWidth, 0], // 右边菜单隐藏
-    });
-
-    return (
-      <Animated.View
-        style={[
-          {
-            position: 'absolute',
-            right: 0,
-            top: 0,
-            width: menuWidth,
-            height: menuHeight,
-            justifyContent: 'center',
-            alignItems: 'center',
-          },
-          {transform: [{translateX}]},
-        ]}>
-        {/* 渲染子组件 */}
-        {children}
-      </Animated.View>
-    );
-  },
-);
 
 export default CustomDrawerTest;
