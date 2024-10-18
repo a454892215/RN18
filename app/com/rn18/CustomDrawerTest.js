@@ -10,8 +10,10 @@ const CustomDrawerTest = () => {
     setParentSize({width, height});
   };
 
-  /** @type { React.MutableRefObject<CustomDrawer> }*/
+  /** @type { React.MutableRefObject<CustomRightDrawer> }*/
   const drawerRef = useRef(); // 创建ref
+  const menuWidth = 120;
+  const menuHeight = 180;
   return (
     <View
       style={{
@@ -21,7 +23,25 @@ const CustomDrawerTest = () => {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <CustomDrawer ref={drawerRef} menuWidth={120} menuHeight={180}>
+      <CustomRightDrawer
+        ref={drawerRef}
+        menuWidth={menuWidth}
+        menuHeight={menuHeight}>
+        <View
+          style={{
+            width: menuWidth,
+            height: menuHeight,
+            flex: 1,
+            backgroundColor: '#d05afd',
+            overflow: 'hidden',
+            borderRadius: 6,
+            marginBottom: 3,
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Text style={{fontSize: 16, color: '#ff0000'}}>你好</Text>
+        </View>
         <View
           style={{
             width: parentSize.width,
@@ -54,7 +74,7 @@ const CustomDrawerTest = () => {
             <Text style={{fontSize: 16, color: '#ffffff'}}>开关</Text>
           </TouchableOpacity>
         </View>
-      </CustomDrawer>
+      </CustomRightDrawer>
       {/*悬浮按钮*/}
       <TouchableOpacity
         style={{
@@ -78,9 +98,9 @@ const CustomDrawerTest = () => {
   );
 };
 
-const CustomDrawer = React.forwardRef(
+const CustomRightDrawer = React.forwardRef(
   ({children, menuWidth, menuHeight}, ref) => {
-    CustomDrawer.displayName = 'CustomDrawer';
+    CustomRightDrawer.displayName = 'CustomRightDrawer';
     const [isOpen, setIsOpen] = useState(false);
     const animation = useRef(new Animated.Value(0)).current;
 
@@ -88,14 +108,14 @@ const CustomDrawer = React.forwardRef(
       if (isOpen) {
         Animated.timing(animation, {
           toValue: 0,
-          duration: 300,
+          duration: 250,
           useNativeDriver: true,
         }).start(() => setIsOpen(false));
       } else {
         setIsOpen(true);
         Animated.timing(animation, {
           toValue: 1,
-          duration: 300,
+          duration: 250,
           useNativeDriver: true,
         }).start();
       }
@@ -116,11 +136,8 @@ const CustomDrawer = React.forwardRef(
             position: 'absolute',
             right: 0,
             top: 0,
-            bottom: 0,
             width: menuWidth,
             height: menuHeight,
-            flex: 1,
-            backgroundColor: '#335c29',
             justifyContent: 'center',
             alignItems: 'center',
           },
