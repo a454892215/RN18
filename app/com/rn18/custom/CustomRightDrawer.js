@@ -2,7 +2,7 @@ import React, {useRef, useState} from 'react';
 import {Animated} from 'react-native';
 
 const CustomRightDrawer = React.forwardRef(
-  ({children, menuWidth, menuHeight}, ref) => {
+  ({children, menuWidth, menuHeight, style}, ref) => {
     CustomRightDrawer.displayName = 'CustomRightDrawer';
     const [isOpen, setIsOpen] = useState(false);
     const animation = useRef(new Animated.Value(0)).current;
@@ -45,6 +45,7 @@ const CustomRightDrawer = React.forwardRef(
             alignItems: 'center',
           },
           {transform: [{translateX}]},
+          style,
         ]}>
         {/* 渲染子组件 */}
         {children}

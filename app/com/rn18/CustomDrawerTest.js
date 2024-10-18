@@ -27,6 +27,7 @@ const CustomDrawerTest = () => {
       }}>
       <CustomRightDrawer
         ref={drawerRef}
+        style={{marginTop: 30}}
         menuWidth={menuWidth}
         menuHeight={menuHeight}>
         <View
