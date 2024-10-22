@@ -2,7 +2,7 @@ import React, {useRef, useState} from 'react';
 import {Animated} from 'react-native';
 
 const CustomRightDrawer = React.forwardRef(
-  ({children, menuWidth, menuHeight, style}, ref) => {
+  ({children, menuWidth, menuHeight, styles}, ref) => {
     CustomRightDrawer.displayName = 'CustomRightDrawer';
     const [isOpen, setIsOpen] = useState(false);
     const animation = useRef(new Animated.Value(0)).current;
@@ -22,6 +22,7 @@ const CustomRightDrawer = React.forwardRef(
           useNativeDriver: true,
         }).start();
       }
+      return !isOpen;
     };
 
     // 将 toggleDrawer 暴露给父组件
@@ -45,7 +46,7 @@ const CustomRightDrawer = React.forwardRef(
             alignItems: 'center',
           },
           {transform: [{translateX}]},
-          style,
+          styles,
         ]}>
         {/* 渲染子组件 */}
         {children}
