@@ -40,7 +40,7 @@ const HelloWorldScreen = () => {
       <ScrollView style={{}}>
         <View
           style={{
-            backgroundColor: '#ffFF00',
+            backgroundColor: '#5e9acd',
             flexDirection: 'column',
             alignItems: 'center',
             marginBottom: insets.bottom,
