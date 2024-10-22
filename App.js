@@ -62,6 +62,7 @@ import CustomButton from './app/com/rn18/custom/CustomButton';
 import InputSample from './app/com/rn18/InputSample';
 import MyButton from './app/com/rn18/custom/MyButton';
 import CustomDrawerTest from './app/com/rn18/CustomDrawerTest';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
@@ -211,7 +212,7 @@ const HomeScreen = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaProvider style={backgroundStyle}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
@@ -250,7 +251,7 @@ const HomeScreen = ({navigation}) => {
           <LearnMoreLinks />
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 
