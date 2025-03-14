@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Animated, ScrollView, View, Text, StyleSheet } from 'react-native';
 
+const stickyHeadHeight = 100
 class ScrollViewStickyPage extends Component {
     constructor(props) {
         super(props);
@@ -12,9 +13,9 @@ class ScrollViewStickyPage extends Component {
 
     componentDidMount() {
         this.scrollListener = this.scrollY.addListener(({ value }) => {
-            if (value >= 60 && !this.state.isSticky) {
+            if (value >= stickyHeadHeight && !this.state.isSticky) {
                 this.setState({ isSticky: true });
-            } else if (value < 60 && this.state.isSticky) {
+            } else if (value < stickyHeadHeight && this.state.isSticky) {
                 this.setState({ isSticky: false });
             }
         });
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     placeholder: {
-        height: 60,
+        height: stickyHeadHeight,
         backgroundColor: '#75c447',
     },
     stickyComponent: {
