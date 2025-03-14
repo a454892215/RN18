@@ -138,6 +138,7 @@ const HelloWorldScreen = () => {
               'CustomDrawerTest',
               'CustomDrawerTest',
             )}
+              {getPageJumpButton(navigation, 'ScrollViewStickyPage', 'ScrollViewStickyPage')}
             {getPageJumpButton(navigation, 'ApiTestPage', 'ApiTestPage')}
           </View>
         </View>

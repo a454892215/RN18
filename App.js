@@ -63,6 +63,7 @@ import InputSample from './app/com/rn18/InputSample';
 import MyButton from './app/com/rn18/custom/MyButton';
 import CustomDrawerTest from './app/com/rn18/CustomDrawerTest';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import ScrollViewStickyPage from "./app/com/rn18/ScrollViewStickyPage";
 
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 
@@ -178,6 +179,7 @@ const App = () => {
               color: 'blue',
             }}
           />
+          <Stack.Screen name="ScrollViewStickyPage" component={ScrollViewStickyPage} />
           <Stack.Screen name="ApiTestPage" component={ApiTestPage} />
           <Stack.Screen
             name="RefreshAndLoadMore"
